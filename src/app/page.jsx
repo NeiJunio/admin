@@ -1,9 +1,13 @@
 'use client';
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 export default function Home() {
+
+    const [modalOpen, setModalOpen] = useState(false); // Estado para controlar a exibição do modal
+
+
     useEffect(() => {
         const buttons = document.querySelectorAll(`.${styles.sidebar} button`);
         const sections = document.querySelectorAll(`.${styles.content_section}`);
@@ -31,6 +35,16 @@ export default function Home() {
         });
     }, []);
 
+     // Função para abrir o modal
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  // Função para fechar o modal
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
     
 
     return (
@@ -53,8 +67,21 @@ export default function Home() {
                         <button id="novoCliente">Novo</button>
                         <button id="alterarCliente">Alterar</button>
                         <button id="excluirCliente">Excluir</button>
-                        <button id="localizarCliente">Localizar</button>
+                        <button id="localizarCliente" onClick={openModal}>Localizar</button>
                     </div>
+                    <div id="modalFiltro" className={`modal ${modalOpen ? 'open' : ''}`}>
+        <div className="modal-content">
+          <span className="close" onClick={closeModal}>&times;</span>
+          <h2>Filtros de Pesquisa</h2>
+          <form id="filtroForm">
+            {/* Adicione aqui seus campos de filtro */}
+            <label htmlFor="filtroNome">Nome:</label>
+            <input type="text" id="filtroNome" name="filtroNome" />
+            {/* Adicione mais campos de filtro conforme necessário */}
+            <button type="submit">Pesquisar</button>
+          </form>
+        </div>
+      </div>
                     {/* <form id="clienteForm" className={styles.form}>
                         <input type="hidden" id="clienteId" className={styles.input} />
                         <div className={styles.input_row}>
