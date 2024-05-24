@@ -1,201 +1,346 @@
-import Image from "next/image";
+'use client';
+
+import { useEffect } from "react";
 import styles from "./page.module.css";
 
 export default function Home() {
+    useEffect(() => {
+        const buttons = document.querySelectorAll(`.${styles.sidebar} button`);
+        const sections = document.querySelectorAll(`.${styles.content_section}`);
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const targetId = button.getAttribute("data-target").substring(1);
+
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.remove(styles.hidden);
+                    } else {
+                        section.classList.add(styles.hidden);
+                    }
+                });
+
+                buttons.forEach(btn => {
+                    if (btn === button) {
+                        btn.classList.add(styles.active);
+                    } else {
+                        btn.classList.remove(styles.active);
+                    }
+                });
+            });
+        });
+    }, []);
+
+    
+
     return (
         <div className={styles.grid_container}>
             <div className={styles.header}>
                 <h1>Painel Administrativo da Mecânica</h1>
             </div>
             <div className={styles.sidebar}>
-                <button className={styles.sidebar_button} data-target="#clientes">Clientes</button>
-                <button className={styles.sidebar_button} data-target="#veiculos">Veículos</button>
-                <button className={styles.sidebar_button} data-target="#servicos">Serviços</button>
-                <button className={styles.sidebar_button} data-target="#agenda">Agenda</button>
-                <button className={styles.sidebar_button} data-target="#historico">Histórico</button>
+                <button data-target="#clientes">Clientes</button>
+                <button data-target="#veiculos">Veículos</button>
+                <button data-target="#servicos">Serviços</button>
+                <button data-target="#agenda">Agenda</button>
+                <button data-target="#historico">Histórico</button>
             </div>
             <div className={styles.main_content}>
                 {/* SESSÃO CLIENTES */}
-                <div id="clientes" className={styles.content_section}>
-
+                <div id="clientes" className={`${styles.content_section} ${styles.hidden}`}>
                     <h2 className={styles.h2}>Gerenciamento de Clientes</h2>
-
-                    <div class={styles.button_group}>
+                    <div className={styles.button_group}>
                         <button id="novoCliente">Novo</button>
                         <button id="alterarCliente">Alterar</button>
                         <button id="excluirCliente">Excluir</button>
                         <button id="localizarCliente">Localizar</button>
                     </div>
-
-                    <form id="clienteForm" className={styles.form}>
-
+                    {/* <form id="clienteForm" className={styles.form}>
                         <input type="hidden" id="clienteId" className={styles.input} />
-
                         <div className={styles.input_row}>
                             <div className={`${styles.input_wrapper} ${styles.input_small}`}>
-                                <label for="codigo" className={styles.label}>Código</label>
+                                <label htmlFor="codigo" className={styles.label}>Código</label>
                                 <input type="number" id="codigo" name="codigo" required className={styles.input} />
                             </div>
-
                             <div className={`${styles.input_wrapper} ${styles.input_large}`}>
-                                <label for="nome" className={styles.label}>Nome:</label>
+                                <label htmlFor="nome" className={styles.label}>Nome:</label>
                                 <input type="text" id="nome" name="nome" required className={styles.input} />
                             </div>
-
                             <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
-                                <label for="cpf" className={styles.label}>CPF:</label>
+                                <label htmlFor="cpf" className={styles.label}>CPF:</label>
                                 <input type="text" id="cpf" name="cpf" required className={styles.input} />
                             </div>
                         </div>
-
                         <div className={styles.input_row}>
                             <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
-                                <label for="data" className={styles.label}>Data de nascimento:</label>
+                                <label htmlFor="data" className={styles.label}>Data de nascimento:</label>
                                 <input type="date" id="data" name="data" required className={styles.input} />
                             </div>
-
-                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
-                                <label for="email" className={styles.label}>Email:</label>
-                                <input type="email" id="email" name="email" required className={styles.input} />
-                            </div>
-
                             <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
-                                <label for="telefone" className={styles.label}>Telefone:</label>
-                                <input type="tel" id="telefone" name="telefone" required className={styles.input} />
-                            </div>
-                        </div>
-
-                        <div className={styles.input_row}>
-                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
-                                <label for="access-level" className={styles.label}>Nível de Acesso:</label>
-                                <select id="access-level" name="access-level" className={`${styles.select} ${styles.input_small}`}>
-                                    <option value="user" className={styles.option}>Usuário</option>
-                                    <option value="admin" className={styles.option}>Administrador</option>
+                                <label htmlFor="sexo" className={styles.label}>Sexo:</label>
+                                <select id="sexo" name="sexo" required className={styles.select}>
+                                    <option value="">Selecionar</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
                                 </select>
                             </div>
                         </div>
-
-                        <div className={styles.footer_form}>
-                        <button type="button" onclick="cancelarAcao()" className={styles.button_cancel}>Cancelar</button>
-                            <button type="submit" className={styles.button_submit}>Salvar</button>
+                        <div className={styles.input_row}>
+                            <div className={styles.input_wrapper}>
+                                <label htmlFor="telefone" className={styles.label}>Telefone:</label>
+                                <input type="tel" id="telefone" name="telefone" required className={styles.input} />
+                            </div>
+                            <div className={styles.input_wrapper}>
+                                <label htmlFor="email" className={styles.label}>E-mail:</label>
+                                <input type="email" id="email" name="email" required className={styles.input} />
+                            </div>
                         </div>
-                    </form>
-                    {/* <h3 className={styles.h3}>Lista de Clientes</h3>
-                    <table id="clientesTable" className={styles.table}>
+                        <div className={styles.input_row}>
+                            <div className={styles.input_wrapper}>
+                                <label htmlFor="endereco" className={styles.label}>Endereço:</label>
+                                <input type="text" id="endereco" name="endereco" required className={styles.input} />
+                            </div>
+                        </div>
+                        <div className={styles.footer_form}>
+                            <button type="submit" className={styles.button_submit}>Salvar</button>
+                            <button type="reset" className={styles.button_cancel}>Cancelar</button>
+                        </div>
+                    </form> */}
+                    <form id="clienteForm" className={styles.form}>
+
+<input type="hidden" id="clienteId" className={styles.input} />
+
+<div className={styles.input_row}>
+    <div className={`${styles.input_wrapper} ${styles.input_small_codigo}`}>
+        <label for="codigo" className={styles.label}>Código</label>
+        <input type="number" id="codigo" name="codigo" required className={styles.input} />
+    </div>
+
+    <div className={`${styles.input_wrapper} ${styles.input_large}`}>
+        <label for="nome" className={styles.label}>Nome:</label>
+        <input type="text" id="nome" name="nome" required className={styles.input} />
+    </div>
+
+    <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+        <label for="cpf" className={styles.label}>CPF:</label>
+        <input type="text" id="cpf" name="cpf" required className={styles.input} />
+    </div>
+</div>
+
+<div className={styles.input_row}>
+    <div className={`${styles.input_wrapper} ${styles.input_small}`}>
+        <label for="data" className={styles.label}>Data de nascimento:</label>
+        <input type="date" id="data" name="data" required className={styles.input} />
+    </div>
+
+    <div className={`${styles.input_wrapper} ${styles.input_large}`}>
+        <label for="email" className={styles.label}>Email:</label>
+        <input type="email" id="email" name="email" required className={styles.input} />
+    </div>
+
+    <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+        <label for="telefone" className={styles.label}>Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required className={styles.input} />
+    </div>
+</div>
+
+<div className={styles.input_row}>
+    <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+        <label for="access-level" className={styles.label}>Nível de Acesso:</label>
+        <select id="access-level" name="access-level" className={`${styles.select} ${styles.input_medium}`}>
+            <option value="user" className={styles.option}>Usuário</option>
+            <option value="admin" className={styles.option}>Administrador</option>
+        </select>
+    </div>
+</div>
+
+<div className={styles.footer_form}>
+<button type="button" onclick="cancelarAcao()" className={styles.button_cancel}>Cancelar</button>
+    <button type="submit" className={styles.button_submit}>Salvar</button>
+</div>
+</form>
+                    <table id="tabelaClientes" className={styles.table}>
                         <thead>
-                            <tr className={styles.tr}>
+                            <tr>
+                                <th className={styles.th}>Código</th>
                                 <th className={styles.th}>Nome</th>
-                                <th className={styles.th}>Email</th>
+                                <th className={styles.th}>CPF</th>
+                                <th className={styles.th}>Data de Nascimento</th>
+                                <th className={styles.th}>Sexo</th>
                                 <th className={styles.th}>Telefone</th>
-                                <th className={styles.th}>Ações</th>
+                                <th className={styles.th}>E-mail</th>
+                                <th className={styles.th}>Endereço</th>
                             </tr>
                         </thead>
-                    </table> */}
+                        <tbody>
+                            {/* Linhas de dados aqui */}
+                        </tbody>
+                    </table>
                 </div>
 
-                {/* SESSÃO VEICULOS 
-                <div id="veiculos" className={styles.content_section}>
+                {/* SESSÃO VEÍCULOS */}
+                <div id="veiculos" className={`${styles.content_section} ${styles.hidden}`}>
                     <h2 className={styles.h2}>Gerenciamento de Veículos</h2>
+                    <div className={styles.button_group}>
+                        <button id="novoVeiculo">Novo</button>
+                        <button id="alterarVeiculo">Alterar</button>
+                        <button id="excluirVeiculo">Excluir</button>
+                        <button id="localizarVeiculo">Localizar</button>
+                    </div>
                     <form id="veiculoForm" className={styles.form}>
                         <input type="hidden" id="veiculoId" className={styles.input} />
-
-                        <label for="marca" className={styles.label}>Marca:</label>
-                        <input type="text" id="marca" name="marca" required className={styles.input} />
-
-                        <label for="modelo" className={styles.label}>Modelo:</label>
-                        <input type="text" id="modelo" name="modelo" required className={styles.input} />
-
-                        <label for="ano" className={styles.label}>Ano:</label>
-                        <input type="number" id="ano" name="ano" required className={styles.input} />
-
-                        <button type="submit" className={styles.button_submit}>Salvar</button>
+                        <div className={styles.input_row}>
+                            <div className={`${styles.input_wrapper} ${styles.input_small}`}>
+                                <label htmlFor="placa" className={styles.label}>Placa:</label>
+                                <input type="text" id="placa" name="placa" required className={styles.input} />
+                            </div>
+                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
+                                <label htmlFor="modelo" className={styles.label}>Modelo:</label>
+                                <input type="text" id="modelo" name="modelo" required className={styles.input} />
+                            </div>
+                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+                                <label htmlFor="marca" className={styles.label}>Marca:</label>
+                                <input type="text" id="marca" name="marca" required className={styles.input} />
+                            </div>
+                        </div>
+                        <div className={styles.input_row}>
+                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+                                <label htmlFor="ano" className={styles.label}>Ano:</label>
+                                <input type="number" id="ano" name="ano" required className={styles.input} />
+                            </div>
+                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+                                <label htmlFor="cor" className={styles.label}>Cor:</label>
+                                <input type="text" id="cor" name="cor" required className={styles.input} />
+                            </div>
+                        </div>
+                        <div className={styles.footer_form}>
+                            <button type="submit" className={styles.button_submit}>Salvar</button>
+                            <button type="reset" className={styles.button_cancel}>Cancelar</button>
+                        </div>
                     </form>
-                    <h3>Lista de Veículos</h3>
-                    <table id="veiculosTable" className={styles.table}>
+                    <table id="tabelaVeiculos" className={styles.table}>
                         <thead>
-                            <tr className={styles.tr}>
-                                <th className={styles.th}>Marca</th>
+                            <tr>
+                                <th className={styles.th}>Placa</th>
                                 <th className={styles.th}>Modelo</th>
+                                <th className={styles.th}>Marca</th>
                                 <th className={styles.th}>Ano</th>
-                                <th className={styles.th}>Ações</th>
+                                <th className={styles.th}>Cor</th>
                             </tr>
                         </thead>
-
+                        <tbody>
+                            {/* Linhas de dados aqui */}
+                        </tbody>
                     </table>
-                </div> */}
+                </div>
 
-                {/* SESSÃO SERVIÇOS}
-                <div id="servicos" className={styles.content_section}>
+                {/* SESSÃO SERVIÇOS */}
+                <div id="servicos" className={`${styles.content_section} ${styles.hidden}`}>
                     <h2 className={styles.h2}>Gerenciamento de Serviços</h2>
+                    <div className={styles.button_group}>
+                        <button id="novoServico">Novo</button>
+                        <button id="alterarServico">Alterar</button>
+                        <button id="excluirServico">Excluir</button>
+                        <button id="localizarServico">Localizar</button>
+                    </div>
                     <form id="servicoForm" className={styles.form}>
                         <input type="hidden" id="servicoId" className={styles.input} />
-
-                        <label for="codigoServico" className={styles.label}>Código</label>
-                        <input type="text" id="codigoServico" required className={styles.input} />
-
-                        <label for="nomeServico" className={styles.label}>Nome do Serviço</label>
-                        <input type="text" id="nomeServico" required className={styles.input} />
-
-                        <label for="tempoEstimado" className={styles.label}>Tempo Estimado</label>
-                        <input type="text" id="tempoEstimado" required className={styles.input} />
-
-                        <label for="preco" className={styles.label}>Valor</label>
-                        <input type="number" id="preco" required className={styles.input} />
-
-                        <label for="categoria" className={styles.label}>Categoria</label>
-                        <input type="text" id="categoria" required className={styles.input} />
-
-                        <label for="disponibilidade" className={styles.label}>Disponibilidade</label>
-                        <select id="disponibilidade" required className={styles.select}>
-                            <option value="disponivel">Disponível</option>
-                            <option value="indisponivel">Indisponível</option>
-                        </select>
-
-                        <label for="descricao" className={styles.label}>Descrição</label>
-                        <textarea id="descricao" required className={styles.textarea}></textarea>
-
-                        <button type="submit" className={styles.button_submit}>Salvar</button>
+                        <div className={styles.input_row}>
+                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
+                                <label htmlFor="descricao" className={styles.label}>Descrição:</label>
+                                <input type="text" id="descricao" name="descricao" required className={styles.input} />
+                            </div>
+                            <div className={`${styles.input_wrapper} ${styles.input_small}`}>
+                                <label htmlFor="preco" className={styles.label}>Preço:</label>
+                                <input type="number" id="preco" name="preco" required className={styles.input} />
+                            </div>
+                        </div>
+                        <div className={styles.footer_form}>
+                            <button type="submit" className={styles.button_submit}>Salvar</button>
+                            <button type="reset" className={styles.button_cancel}>Cancelar</button>
+                        </div>
                     </form>
-                </div> */}
+                    <table id="tabelaServicos" className={styles.table}>
+                        <thead>
+                            <tr>
+                                <th className={styles.th}>Descrição</th>
+                                <th className={styles.th}>Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* Linhas de dados aqui */}
+                        </tbody>
+                    </table>
+                </div>
 
-                {/* SESSÃO HISTÓRICO
-                <div id="historico" class="content_section">
-                    <h2 className={styles.h2}>Gerenciamento de Histórico</h2>
-                    <form id="historicoForm" className={styles.form}>
-
-                        <input type="hidden" id="veiculoId" className={styles.input} />
-
-                        <label for="codigoHistorico" className={styles.label}>Código</label>
-                        <input type="text" id="codigoHistorico" required className={styles.input} />
-
-                        <label for="nomeCliente" className={styles.label}>Nome</label>
-                        <input type="text" id="nomeCliente" required className={styles.input} />
-
-                        <label for="veiculo" className={styles.label}>Veículo</label>
-                        <input type="text" id="veiculo" required className={styles.input} />
-
-                        <label for="placa" className={styles.label}>Placa</label>
-                        <input type="text" id="placa" required className={styles.input} />
-
-                        <label for="servico" className={styles.label}>Serviço</label>
-                        <input type="text" id="servico" required className={styles.input} />
-
-                        <label for="data" className={styles.label}>Data</label>
-                        <input type="date" id="data" required className={styles.input} />
-
-                        <label for="hora" className={styles.label}>Horário</label>
-                        <input type="time" id="hora" required className={styles.input} />
-
-                        <label for="valor" className={styles.label}>Valor</label>
-                        <input type="number" id="valor" required className={styles.input} />
-
-                        <button type="submit" className={styles.button_submit}>Salvar</button>
+                {/* SESSÃO AGENDA */}
+                <div id="agenda" className={`${styles.content_section} ${styles.hidden}`}>
+                    <h2 className={styles.h2}>Gerenciamento de Agenda</h2>
+                    <div className={styles.button_group}>
+                        <button id="novoAgendamento">Novo</button>
+                        <button id="alterarAgendamento">Alterar</button>
+                        <button id="excluirAgendamento">Excluir</button>
+                        <button id="localizarAgendamento">Localizar</button>
+                    </div>
+                    <form id="agendamentoForm" className={styles.form}>
+                        <input type="hidden" id="agendamentoId" className={styles.input} />
+                        <div className={styles.input_row}>
+                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
+                                <label htmlFor="cliente" className={styles.label}>Cliente:</label>
+                                <input type="text" id="cliente" name="cliente" required className={styles.input} />
+                            </div>
+                            <div className={`${styles.input_wrapper} ${styles.input_small}`}>
+                                <label htmlFor="dataAgendamento" className={styles.label}>Data:</label>
+                                <input type="date" id="dataAgendamento" name="dataAgendamento" required className={styles.input} />
+                            </div>
+                            <div className={`${styles.input_wrapper} ${styles.input_small}`}>
+                                <label htmlFor="horaAgendamento" className={styles.label}>Hora:</label>
+                                <input type="time" id="horaAgendamento" name="horaAgendamento" required className={styles.input} />
+                            </div>
+                        </div>
+                        <div className={styles.footer_form}>
+                            <button type="submit" className={styles.button_submit}>Salvar</button>
+                            <button type="reset" className={styles.button_cancel}>Cancelar</button>
+                        </div>
                     </form>
-                </div> */}
-            </div >
-
-        </div >
-
-
-    );
-}
+                    <table id="tabelaAgenda" className={styles.table}>
+                        <thead>
+                            <tr>
+                                <th className={styles.th}>Cliente</th>
+                                <th className={styles.th}>Data</th>
+                                <th className={styles.th}>Hora</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* Linhas de dados aqui */}
+                        </tbody>
+                    </table>
+                </div>
+                {/* SESSÃO HISTÓRICO */}
+                <div id="historico" className={`${styles.content_section} ${styles.hidden}`}>
+                    <h2 className={styles.h2}>Histórico de Serviços</h2>
+                    <div className={styles.button_group}>
+                        <button id="detalhesServico">Detalhes</button>
+                        <button id="localizarHistorico">Localizar</button>
+                    </div>
+                    <div id="detalhesServicoPanel" className={styles.hidden}>
+                        {/* Detalhes do serviço aqui */}
+                    </div>
+                    <table id="tabelaHistorico" className={styles.table}>
+                        <thead>
+                            <tr>
+                                <th className={styles.th}>Data</th>
+                                <th className={styles.th}>Cliente</th>
+                                <th className={styles.th}>Veículo</th>
+                                <th className={styles.th}>Serviço</th>
+                                <th className={styles.th}>Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* Linhas de dados aqui */}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    )}
