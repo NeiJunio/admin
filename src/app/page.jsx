@@ -20,6 +20,13 @@ export default function Home() {
 
                     <h2 className={styles.h2}>Gerenciamento de Clientes</h2>
 
+                    <div class={styles.button_group}>
+                        <button id="novoCliente">Novo</button>
+                        <button id="alterarCliente">Alterar</button>
+                        <button id="excluirCliente">Excluir</button>
+                        <button id="localizarCliente">Localizar</button>
+                    </div>
+
                     <form id="clienteForm" className={styles.form}>
 
                         <input type="hidden" id="clienteId" className={styles.input} />
@@ -62,17 +69,18 @@ export default function Home() {
                             <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
                                 <label for="access-level" className={styles.label}>Nível de Acesso:</label>
                                 <select id="access-level" name="access-level" className={`${styles.select} ${styles.input_small}`}>
-                                    <option value="user" >Usuário</option>
-                                    <option value="admin">Administrador</option>
-                                    
+                                    <option value="user" className={styles.option}>Usuário</option>
+                                    <option value="admin" className={styles.option}>Administrador</option>
                                 </select>
                             </div>
                         </div>
 
-
-                        <button type="submit" className={styles.button_submit}>Salvar</button>
+                        <div className={styles.footer_form}>
+                        <button type="button" onclick="cancelarAcao()" className={styles.button_cancel}>Cancelar</button>
+                            <button type="submit" className={styles.button_submit}>Salvar</button>
+                        </div>
                     </form>
-                    <h3 className={styles.h3}>Lista de Clientes</h3>
+                    {/* <h3 className={styles.h3}>Lista de Clientes</h3>
                     <table id="clientesTable" className={styles.table}>
                         <thead>
                             <tr className={styles.tr}>
@@ -82,7 +90,7 @@ export default function Home() {
                                 <th className={styles.th}>Ações</th>
                             </tr>
                         </thead>
-                    </table>
+                    </table> */}
                 </div>
 
                 {/* SESSÃO VEICULOS 
