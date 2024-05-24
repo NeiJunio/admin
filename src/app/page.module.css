@@ -31,7 +31,7 @@
 
 .sidebar button {
   width: 100%;
-  padding: 15px;
+  padding: 15px 20px;
   text-align: left;
   border: none;
   background: none;
@@ -41,6 +41,7 @@
   font-size: 1em;
   outline: none;
   transition: background-color 0.3s;
+  font-weight: 700;
 }
 
 .sidebar button:hover, .sidebar button.active {
@@ -67,7 +68,8 @@
 .h2 {
   color: #ff9d00;
   border-bottom: 2px solid #ff9d00;
-  padding-bottom: 5px;
+  padding: 15px;
+  font-size: 22px;
 }
 
 .form {
@@ -165,6 +167,38 @@
 .row{
   display: flex;
 }
+
+.input_row {
+  display: flex;
+  margin-bottom: 20px; /* Espaçamento entre as linhas */
+}
+
+.input_small{
+
+  flex: 1;
+  max-width: 15%;
+}
+.input_large{
+  flex: 4;
+
+}
+.input_medium{
+  flex: 2;
+
+}
+
+.input-wrapper {
+  flex: 1; /* Todos os inputs terão a mesma proporção de crescimento */
+  margin-right: 20px; /* Espaçamento entre os inputs */
+  text-align: left; /* Alinhar o texto do label à esquerda */
+
+}
+
+.input-wrapper:last-child {
+  margin-right: 0; /* Remove o espaço à direita do último item da linha */
+}
+
+
 
 /* button.editar, button.excluir {
   padding: 5px 10px;

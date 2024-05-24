@@ -17,19 +17,58 @@ export default function Home() {
             <div className={styles.main_content}>
                 {/* SESSÃO CLIENTES */}
                 <div id="clientes" className={styles.content_section}>
+
                     <h2 className={styles.h2}>Gerenciamento de Clientes</h2>
+
                     <form id="clienteForm" className={styles.form}>
+
                         <input type="hidden" id="clienteId" className={styles.input} />
-<div className={styles.row}>
 
-                        <label for="nome" className={styles.label}>Nome:</label>
-                        <input type="text" id="nome" name="nome" required className={styles.input} />
+                        <div className={styles.input_row}>
+                            <div className={`${styles.input_wrapper} ${styles.input_small}`}>
+                                <label for="codigo" className={styles.label}>Código</label>
+                                <input type="number" id="codigo" name="codigo" required className={styles.input} />
+                            </div>
 
-                        <label for="email" className={styles.label}>Email:</label>
-                        <input type="email" id="email" name="email" required className={styles.input} />
+                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
+                                <label for="nome" className={styles.label}>Nome:</label>
+                                <input type="text" id="nome" name="nome" required className={styles.input} />
+                            </div>
+
+                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+                                <label for="cpf" className={styles.label}>CPF:</label>
+                                <input type="text" id="cpf" name="cpf" required className={styles.input} />
+                            </div>
                         </div>
-                        <label for="telefone" className={styles.label}>Telefone:</label>
-                        <input type="tel" id="telefone" name="telefone" required className={styles.input} />
+
+                        <div className={styles.input_row}>
+                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+                                <label for="data" className={styles.label}>Data de nascimento:</label>
+                                <input type="date" id="data" name="data" required className={styles.input} />
+                            </div>
+
+                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
+                                <label for="email" className={styles.label}>Email:</label>
+                                <input type="email" id="email" name="email" required className={styles.input} />
+                            </div>
+
+                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+                                <label for="telefone" className={styles.label}>Telefone:</label>
+                                <input type="tel" id="telefone" name="telefone" required className={styles.input} />
+                            </div>
+                        </div>
+
+                        <div className={styles.input_row}>
+                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+                                <label for="access-level" className={styles.label}>Nível de Acesso:</label>
+                                <select id="access-level" name="access-level" className={`${styles.select} ${styles.input_small}`}>
+                                    <option value="user" >Usuário</option>
+                                    <option value="admin">Administrador</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+
 
                         <button type="submit" className={styles.button_submit}>Salvar</button>
                     </form>
@@ -43,12 +82,10 @@ export default function Home() {
                                 <th className={styles.th}>Ações</th>
                             </tr>
                         </thead>
-
-
                     </table>
                 </div>
 
-                {/* SESSÃO VEICULOS */}
+                {/* SESSÃO VEICULOS 
                 <div id="veiculos" className={styles.content_section}>
                     <h2 className={styles.h2}>Gerenciamento de Veículos</h2>
                     <form id="veiculoForm" className={styles.form}>
@@ -77,9 +114,9 @@ export default function Home() {
                         </thead>
 
                     </table>
-                </div>
+                </div> */}
 
-                {/* SESSÃO SERVIÇOS */}
+                {/* SESSÃO SERVIÇOS}
                 <div id="servicos" className={styles.content_section}>
                     <h2 className={styles.h2}>Gerenciamento de Serviços</h2>
                     <form id="servicoForm" className={styles.form}>
@@ -111,8 +148,9 @@ export default function Home() {
 
                         <button type="submit" className={styles.button_submit}>Salvar</button>
                     </form>
-                </div>
+                </div> */}
 
+                {/* SESSÃO HISTÓRICO
                 <div id="historico" class="content_section">
                     <h2 className={styles.h2}>Gerenciamento de Histórico</h2>
                     <form id="historicoForm" className={styles.form}>
@@ -120,35 +158,35 @@ export default function Home() {
                         <input type="hidden" id="veiculoId" className={styles.input} />
 
                         <label for="codigoHistorico" className={styles.label}>Código</label>
-                        <input type="text" id="codigoHistorico" required className={styles.input}/>
+                        <input type="text" id="codigoHistorico" required className={styles.input} />
 
                         <label for="nomeCliente" className={styles.label}>Nome</label>
-                        <input type="text" id="nomeCliente" required className={styles.input}/>
+                        <input type="text" id="nomeCliente" required className={styles.input} />
 
                         <label for="veiculo" className={styles.label}>Veículo</label>
-                        <input type="text" id="veiculo" required className={styles.input}/>
+                        <input type="text" id="veiculo" required className={styles.input} />
 
                         <label for="placa" className={styles.label}>Placa</label>
-                        <input type="text" id="placa" required className={styles.input}/>
+                        <input type="text" id="placa" required className={styles.input} />
 
                         <label for="servico" className={styles.label}>Serviço</label>
-                        <input type="text" id="servico" required className={styles.input}/>
+                        <input type="text" id="servico" required className={styles.input} />
 
                         <label for="data" className={styles.label}>Data</label>
-                        <input type="date" id="data" required className={styles.input}/>
+                        <input type="date" id="data" required className={styles.input} />
 
                         <label for="hora" className={styles.label}>Horário</label>
-                        <input type="time" id="hora" required className={styles.input}/>
+                        <input type="time" id="hora" required className={styles.input} />
 
                         <label for="valor" className={styles.label}>Valor</label>
-                        <input type="number" id="valor" required className={styles.input}/>
+                        <input type="number" id="valor" required className={styles.input} />
 
                         <button type="submit" className={styles.button_submit}>Salvar</button>
                     </form>
-                </div>
-            </div>
+                </div> */}
+            </div >
 
-        </div>
+        </div >
 
 
     );
