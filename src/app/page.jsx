@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
+import FullCalendar from "./components/agenda/page";
 
 export default function Home() {
 
@@ -285,45 +286,13 @@ export default function Home() {
                 {/* SESSÃO AGENDA */}
                 <div id="agenda" className={`${styles.content_section} ${styles.hidden}`}>
                     <h2 className={styles.h2}>Gerenciamento de Agenda</h2>
-                    <div className={styles.button_group}>
-                        <button id="novoAgendamento">Novo</button>
-                        <button id="alterarAgendamento">Alterar</button>
-                        <button id="excluirAgendamento">Excluir</button>
-                        <button id="localizarAgendamento">Localizar</button>
-                    </div>
-                    <form id="agendamentoForm" className={styles.form}>
-                        <input type="hidden" id="agendamentoId" className={styles.input} />
-                        <div className={styles.input_row}>
-                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
-                                <label htmlFor="cliente" className={styles.label}>Cliente:</label>
-                                <input type="text" id="cliente" name="cliente" required className={styles.input} />
-                            </div>
-                            <div className={`${styles.input_wrapper} ${styles.input_small}`}>
-                                <label htmlFor="dataAgendamento" className={styles.label}>Data:</label>
-                                <input type="date" id="dataAgendamento" name="dataAgendamento" required className={styles.input} />
-                            </div>
-                            <div className={`${styles.input_wrapper} ${styles.input_small}`}>
-                                <label htmlFor="horaAgendamento" className={styles.label}>Hora:</label>
-                                <input type="time" id="horaAgendamento" name="horaAgendamento" required className={styles.input} />
-                            </div>
-                        </div>
-                        <div className={styles.footer_form}>
-                            <button type="submit" className={styles.button_submit}>Salvar</button>
-                            <button type="reset" className={styles.button_cancel}>Cancelar</button>
-                        </div>
-                    </form>
-                    <table id="tabelaAgenda" className={styles.table}>
-                        <thead>
-                            <tr>
-                                <th className={styles.th}>Cliente</th>
-                                <th className={styles.th}>Data</th>
-                                <th className={styles.th}>Hora</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {/* Linhas de dados aqui */}
-                        </tbody>
-                    </table>
+                    
+
+                   
+                         <FullCalendar />
+                 
+                   
+                    
                 </div>
                 {/* SESSÃO HISTÓRICO */}
                 <div id="historico" className={`${styles.content_section} ${styles.hidden}`}>
