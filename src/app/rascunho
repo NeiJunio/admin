@@ -1,0 +1,24 @@
+// Função para abrir o modal
+const openModal = () => {
+    setModalOpen(true);
+};
+
+// Função para fechar o modal
+const closeModal = () => {
+    setModalOpen(false);
+};
+
+
+<div id="modalFiltro" className={`modal ${modalOpen ? 'open' : '' }`}>
+    <div className="modal-content">
+        <span className="close" onClick={closeModal}>&times;</span>
+        <h2>Filtros de Pesquisa</h2>
+        <form id="filtroForm">
+            {/* Adicione aqui seus campos de filtro */}
+            <label htmlFor="filtroNome">Nome:</label>
+            <input type="text" id="filtroNome" name="filtroNome" />
+            {/* Adicione mais campos de filtro conforme necessário */}
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+</div>

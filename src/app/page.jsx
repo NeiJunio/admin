@@ -35,17 +35,9 @@ export default function Home() {
         });
     }, []);
 
-     // Função para abrir o modal
-  const openModal = () => {
-    setModalOpen(true);
-  };
+   
 
-  // Função para fechar o modal
-  const closeModal = () => {
-    setModalOpen(false);
-  };
 
-    
 
     return (
         <div className={styles.grid_container}>
@@ -67,21 +59,11 @@ export default function Home() {
                         <button id="novoCliente">Novo</button>
                         <button id="alterarCliente">Alterar</button>
                         <button id="excluirCliente">Excluir</button>
-                        <button id="localizarCliente" onClick={openModal}>Localizar</button>
+                        <button id="localizarCliente">Localizar</button>
                     </div>
-                    <div id="modalFiltro" className={`modal ${modalOpen ? 'open' : ''}`}>
-        <div className="modal-content">
-          <span className="close" onClick={closeModal}>&times;</span>
-          <h2>Filtros de Pesquisa</h2>
-          <form id="filtroForm">
-            {/* Adicione aqui seus campos de filtro */}
-            <label htmlFor="filtroNome">Nome:</label>
-            <input type="text" id="filtroNome" name="filtroNome" />
-            {/* Adicione mais campos de filtro conforme necessário */}
-            <button type="submit">Pesquisar</button>
-          </form>
-        </div>
-      </div>
+
+
+                    
                     {/* <form id="clienteForm" className={styles.form}>
                         <input type="hidden" id="clienteId" className={styles.input} />
                         <div className={styles.input_row}>
@@ -135,57 +117,57 @@ export default function Home() {
                     </form> */}
                     <form id="clienteForm" className={styles.form}>
 
-<input type="hidden" id="clienteId" className={styles.input} />
+                        <input type="hidden" id="clienteId" className={styles.input} />
 
-<div className={styles.input_row}>
-    <div className={`${styles.input_wrapper} ${styles.input_small_codigo}`}>
-        <label for="codigo" className={styles.label}>Código</label>
-        <input type="number" id="codigo" name="codigo" required className={styles.input} />
-    </div>
+                        <div className={styles.input_row}>
+                            <div className={`${styles.input_wrapper} ${styles.input_small_codigo}`}>
+                                <label for="codigo" className={styles.label}>Código</label>
+                                <input type="number" id="codigo" name="codigo" required className={styles.input} />
+                            </div>
 
-    <div className={`${styles.input_wrapper} ${styles.input_large}`}>
-        <label for="nome" className={styles.label}>Nome:</label>
-        <input type="text" id="nome" name="nome" required className={styles.input} />
-    </div>
+                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
+                                <label for="nome" className={styles.label}>Nome:</label>
+                                <input type="text" id="nome" name="nome" required className={styles.input} />
+                            </div>
 
-    <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
-        <label for="cpf" className={styles.label}>CPF:</label>
-        <input type="text" id="cpf" name="cpf" required className={styles.input} />
-    </div>
-</div>
+                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+                                <label for="cpf" className={styles.label}>CPF:</label>
+                                <input type="text" id="cpf" name="cpf" required className={styles.input} />
+                            </div>
+                        </div>
 
-<div className={styles.input_row}>
-    <div className={`${styles.input_wrapper} ${styles.input_small}`}>
-        <label for="data" className={styles.label}>Data de nascimento:</label>
-        <input type="date" id="data" name="data" required className={styles.input} />
-    </div>
+                        <div className={styles.input_row}>
+                            <div className={`${styles.input_wrapper} ${styles.input_small}`}>
+                                <label for="data" className={styles.label}>Data de nascimento:</label>
+                                <input type="date" id="data" name="data" required className={styles.input} />
+                            </div>
 
-    <div className={`${styles.input_wrapper} ${styles.input_large}`}>
-        <label for="email" className={styles.label}>Email:</label>
-        <input type="email" id="email" name="email" required className={styles.input} />
-    </div>
+                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
+                                <label for="email" className={styles.label}>Email:</label>
+                                <input type="email" id="email" name="email" required className={styles.input} />
+                            </div>
 
-    <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
-        <label for="telefone" className={styles.label}>Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" required className={styles.input} />
-    </div>
-</div>
+                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+                                <label for="telefone" className={styles.label}>Telefone:</label>
+                                <input type="tel" id="telefone" name="telefone" required className={styles.input} />
+                            </div>
+                        </div>
 
-<div className={styles.input_row}>
-    <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
-        <label for="access-level" className={styles.label}>Nível de Acesso:</label>
-        <select id="access-level" name="access-level" className={`${styles.select} ${styles.input_medium}`}>
-            <option value="user" className={styles.option}>Usuário</option>
-            <option value="admin" className={styles.option}>Administrador</option>
-        </select>
-    </div>
-</div>
+                        <div className={styles.input_row}>
+                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
+                                <label for="access-level" className={styles.label}>Nível de Acesso:</label>
+                                <select id="access-level" name="access-level" className={`${styles.select} ${styles.input_medium}`}>
+                                    <option value="user" className={styles.option}>Usuário</option>
+                                    <option value="admin" className={styles.option}>Administrador</option>
+                                </select>
+                            </div>
+                        </div>
 
-<div className={styles.footer_form}>
-<button type="button" onclick="cancelarAcao()" className={styles.button_cancel}>Cancelar</button>
-    <button type="submit" className={styles.button_submit}>Salvar</button>
-</div>
-</form>
+                        <div className={styles.footer_form}>
+                            <button type="button" onclick="cancelarAcao()" className={styles.button_cancel}>Cancelar</button>
+                            <button type="submit" className={styles.button_submit}>Salvar</button>
+                        </div>
+                    </form>
                     <table id="tabelaClientes" className={styles.table}>
                         <thead>
                             <tr>
@@ -370,4 +352,5 @@ export default function Home() {
                 </div>
             </div>
         </div>
-    )}
+    )
+}
