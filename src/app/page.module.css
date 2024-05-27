@@ -107,11 +107,14 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
 }
 
 .label {
   display: block;
-  margin-top: 10px;
+  margin-bottom: 8px;
   color: #333;
 }
 
@@ -136,8 +139,9 @@
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s;
-  flex: 1;
-  max-width: 120px;
+  
+  
+  grid-column: span 1;
 }
 
 .button_submit:hover {
@@ -146,7 +150,7 @@
 }
 
 .button_cancel {
-  padding: 10px 20px;
+  
   background-color: #333;
   color: white;
   border: none;
@@ -154,8 +158,8 @@
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s;
-  flex: 1;
-  max-width: 120px;
+  grid-column: span 1;
+
 }
 
 
@@ -218,10 +222,32 @@
   display: flex;
 }
 
-.input_row {
-  display: flex;
-  margin-bottom: 20px;
+
+
+
+.grid {
+  display: contents;
 }
+
+.grid_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid_item_small {
+  grid-column: span 2;
+}
+
+.grid_item_medium {
+  grid-column: span 4;
+}
+
+.grid_item_large {
+  grid-column: span 6;
+}
+
+
+
 
 .input_small {
   flex: 1;
@@ -251,12 +277,10 @@
 }
 
 .footer_form {
-  display: flex;
-  gap: 15px;
-  width: calc(100%-20px);
-  align-items: end;
-  justify-content: end;
-  padding-right: 20px;
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 16px;
 }
 
 
