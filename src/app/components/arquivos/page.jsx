@@ -37,6 +37,9 @@ export default function Home() {
     }, []);
 
 
+
+
+
     return (
         <div className={styles.grid_container}>
             <div className={styles.header}>
@@ -61,6 +64,64 @@ export default function Home() {
                     </div>
 
                     <form id="clienteForm" className={styles.form}>
+                        <input type="hidden" id="clienteId" className={styles.input} />
+
+                        <div className={styles.grid_container}>
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label for="codigo" className={styles.label}>Código</label>
+                                <input type="number" id="codigo" name="codigo" required className={styles.input} />
+                            </div>
+
+                            <div className={`${styles.grid_item} ${styles.grid_item_large}`}>
+                                <label for="nome" className={styles.label}>Nome:</label>
+                                <input type="text" id="nome" name="nome" required className={styles.input} />
+                            </div>
+
+                            <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
+                                <label for="cpf" className={styles.label}>CPF:</label>
+                                <input type="text" id="cpf" name="cpf" required className={styles.input} />
+                            </div>
+
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label for="data" className={styles.label}>Data de nascimento:</label>
+                                <input type="date" id="data" name="data" required className={styles.input} />
+                            </div>
+
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label for="sexo" className={styles.label}>Sexo:</label>
+                                <select id="sexo" name="sexo" required className={`${styles.select} ${styles.input_small_select}`}>
+                                    <option value="">Selecionar</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                </select>
+                            </div>
+
+                            <div className={`${styles.grid_item} ${styles.grid_item_large}`}>
+                                <label for="email" className={styles.label}>Email:</label>
+                                <input type="email" id="email" name="email" required className={styles.input} />
+                            </div>
+
+                            <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
+                                <label for="telefone" className={styles.label}>Telefone:</label>
+                                <input type="tel" id="telefone" name="telefone" required className={styles.input} />
+                            </div>
+
+                            <div className={`${styles.grid_item} ${styles.grid_item_large}`}>
+                                <label for="access-level" className={styles.label}>Nível de Acesso:</label>
+                                <select id="access-level" name="access-level" className={`${styles.select} ${styles.input_small_select}`}>
+                                    <option value="user" className={styles.option}>Usuário</option>
+                                    <option value="admin" className={styles.option}>Administrador</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className={styles.footer_form}>
+                            <button type="button" onclick="cancelarAcao()" className={styles.button_cancel}>Cancelar</button>
+                            <button type="submit" className={styles.button_submit}>Salvar</button>
+                        </div>
+                    </form>
+
+                    {/* <form id="clienteForm" className={styles.form}>
 
                         <input type="hidden" id="clienteId" className={styles.input} />
 
@@ -121,9 +182,9 @@ export default function Home() {
                             <button type="button" onclick="cancelarAcao()" className={styles.button_cancel}>Cancelar</button>
                             <button type="submit" className={styles.button_submit}>Salvar</button>
                         </div>
-                    </form>
+                    </form> */}
 
-                    
+
                     {/* <table id="tabelaClientes" className={styles.table}>
                         <thead>
                             <tr>

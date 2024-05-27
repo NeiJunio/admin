@@ -1,0 +1,55 @@
+.form {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.grid_container {
+  display: contents;
+}
+
+.grid_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid_item_small {
+  grid-column: span 2;
+}
+
+.grid_item_medium {
+  grid-column: span 4;
+}
+
+.grid_item_large {
+  grid-column: span 6;
+}
+
+.label {
+  margin-bottom: 8px;
+}
+
+.input, .select {
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input_small_select {
+  padding: 6px;
+  font-size: 14px;
+}
+
+.footer_form {
+  grid-column: span 12;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.button_cancel, .button_submit {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
