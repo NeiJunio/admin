@@ -66,82 +66,64 @@ export default function Home() {
 
                         <div className={styles.grid}>
                             <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                                <label for="codigo" className={styles.label}>Código</label>
-                                <input type="number" id="codigo" name="codigo" required className={styles.input} />
+                                <label for="codigo_cliente" className={styles.label}>Código</label>
+                                <input type="number" id="codigo_cliente" name="codigo_cliente" required className={styles.input} />
                             </div>
 
                             <div className={`${styles.grid_item} ${styles.grid_item_large}`}>
-                                <label for="nome" className={styles.label}>Nome:</label>
-                                <input type="text" id="nome" name="nome" required className={styles.input} />
+                                <label for="nome_cliente" className={styles.label} >Nome:</label>
+                                <input type="text" id="nome_cliente" name="nome_cliente" required className={styles.input} placeholder="Nome Completo" />
                             </div>
 
                             <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
-                                <label for="cpf" className={styles.label}>CPF:</label>
-                                <input type="text" id="cpf" name="cpf" required className={styles.input} />
+                                <label for="cpf_cliente" className={styles.label}>CPF:</label>
+                                <input type="text" id="cpf_cliente" name="cpf_cliente" required className={styles.input} placeholder="xxx.xxx.xxx - xx" />
                             </div>
                         </div>
 
-
                         <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                            <label for="data" className={styles.label}>Data de nascimento:</label>
-                            <input type="date" id="data" name="data" required className={styles.input} />
+                            <label for="data_nasc_cliente" className={styles.label}>Data de nascimento:</label>
+                            <input type="date" id="data_nasc_cliente" name="data_nasc_cliente" required className={styles.input} />
                         </div>
 
                         <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                            <label for="sexo" className={styles.label}>Sexo:</label>
-                            <select id="sexo" name="sexo" required className={`${styles.select} ${styles.input_small_select}`}>
+                            <label for="sexo_cliente" className={styles.label}>Sexo:</label>
+                            <select id="sexo_cliente" name="sexo_cliente" required className={`${styles.select} ${styles.input_small_select}`}>
                                 <option value="">Selecionar</option>
-                                <option value="masculino">Masculino</option>
                                 <option value="feminino">Feminino</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="outro">Outro</option>
                             </select>
                         </div>
 
                         <div className={`${styles.grid_item} ${styles.grid_item_large}`}>
-                            <label for="email" className={styles.label}>Email:</label>
-                            <input type="email" id="email" name="email" required className={styles.input} />
+                            <label for="email_cliente" className={styles.label}>Email:</label>
+                            <input type="email_cliente" id="email_cliente" name="email_cliente" required className={styles.input} placeholder="exemplo@exemplo.com" />
                         </div>
 
                         <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                            <label for="telefone" className={styles.label}>Telefone:</label>
-                            <input type="tel" id="telefone" name="telefone" required className={styles.input} />
+                            <label for="telefone_cliente" className={styles.label}>Telefone:</label>
+                            <input type="tel" id="telefone_cliente" name="telefone_cliente" required className={styles.input} placeholder="(xx) xxxxxx - xxxxx" />
                         </div>
 
-
-                       
                         <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                                <label for="access-level" className={styles.label}>Nível de Acesso:</label>
-                                <select id="access-level" name="access-level"
+                            <label for="nivel_acesso" className={styles.label}>Nível de Acesso:</label>
+                            <select id="nivel_acesso" name="nivel_acesso"
                                 className={`${styles.select} ${styles.grid_item_small}`}>
-                                    <option value="user" className={styles.option}>Usuário</option>
-                                    <option value="admin" className={styles.option}>Administrador</option>
-                                </select>
-                            </div>
-                       
-
-                        <div className={styles.footer_form}>
-                            <button type="button" onclick="cancelarAcao()" className={styles.button_cancel}>Cancelar</button>
-                            <button type="submit" className={styles.button_submit}>Salvar</button>
+                                <option value="user" className={styles.option}>Usuário</option>
+                                <option value="admin" className={styles.option}>Administrador</option>
+                            </select>
+                        </div>
+                        <div className={`${styles.grid_item} ${styles.grid_item_large} ${styles.grid_item_observacoes}`}>
+                            <label htmlFor="observacoes_cliente" className={styles.label}>Observações</label>
+                            <input type="text" id="observacoes_cliente" name="observacoes_cliente" required className={styles.input} />
                         </div>
                     </form>
 
-
-                    {/* <table id="tabelaClientes" className={styles.table}>
-                        <thead>
-                            <tr>
-                                <th className={styles.th}>Código</th>
-                                <th className={styles.th}>Nome</th>
-                                <th className={styles.th}>CPF</th>
-                                <th className={styles.th}>Data de Nascimento</th>
-                                <th className={styles.th}>Sexo</th>
-                                <th className={styles.th}>Telefone</th>
-                                <th className={styles.th}>E-mail</th>
-                                <th className={styles.th}>Endereço</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            Linhas de dados aqui
-                        </tbody>
-                    </table> */}
+                    <div className={styles.footer_form}>
+                        <button type="button" onclick="cancelarAcao()" className={styles.button_cancel}>Cancelar</button>
+                        <button type="submit" className={styles.button_submit}>Salvar</button>
+                    </div>
                 </div>
 
                 {/* SESSÃO VEÍCULOS */}
@@ -154,36 +136,122 @@ export default function Home() {
                         <button id="localizarVeiculo">Localizar</button>
                     </div>
                     <form id="veiculoForm" className={styles.form}>
+
                         <input type="hidden" id="veiculoId" className={styles.input} />
-                        <div className={styles.input_row}>
-                            <div className={`${styles.input_wrapper} ${styles.input_small}`}>
-                                <label htmlFor="placa" className={styles.label}>Placa:</label>
-                                <input type="text" id="placa" name="placa" required className={styles.input} />
+
+                        <div className={styles.grid}>
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label htmlFor="codigo_veiculo" className={styles.label}>Código:</label>
+                                <input type="text" id="placa_veiculo" name="placa_veiculo" required className={styles.input} />
                             </div>
-                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
-                                <label htmlFor="modelo" className={styles.label}>Modelo:</label>
-                                <input type="text" id="modelo" name="modelo" required className={styles.input} />
+                            <div className={`${styles.grid_item} ${styles.grid_item_large}`}>
+                                <label htmlFor="modelo_veiculo" className={styles.label}>Modelo:</label>
+                                <input type="text" id="modelo_veiculo" name="modelo_veiculo" required className={styles.input} />
                             </div>
-                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
-                                <label htmlFor="marca" className={styles.label}>Marca:</label>
-                                <input type="text" id="marca" name="marca" required className={styles.input} />
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label htmlFor="marca_veiculo" className={styles.label}>Marca:</label>
+                                <input type="text" id="marca_veiculo" name="marca_veiculo" required className={styles.input} />
+                                {/* <select id="marca" name="marca" required className={`${styles.select} ${styles.input_small_select}`}>
+                                    <option value="Selecione">Selecione</option>
+                                    <option value="Acura">Acura</option>
+                                    <option value="Alfa Romeo">Alfa Romeo</option>
+                                    <option value="Aston Martin">Aston Martin</option>
+                                    <option value="Audi">Audi</option>
+                                    <option value="Bentley">Bentley</option>
+                                    <option value="BMW">BMW</option>
+                                    <option value="Bugatti">Bugatti</option>
+                                    <option value="Buick">Buick</option>
+                                    <option value="Cadillac">Cadillac</option>
+                                    <option value="Chevrolet">Chevrolet</option>
+                                    <option value="Chrysler">Chrysler</option>
+                                    <option value="Citroën">Citroën</option>
+                                    <option value="Dodge">Dodge</option>
+                                    <option value="Ferrari">Ferrari</option>
+                                    <option value="Fiat">Fiat</option>
+                                    <option value="Ford">Ford</option>
+                                    <option value="Genesis">Genesis</option>
+                                    <option value="GMC">GMC</option>
+                                    <option value="Honda">Honda</option>
+                                    <option value="Hyundai">Hyundai</option>
+                                    <option value="Infiniti">Infiniti</option>
+                                    <option value="Jaguar">Jaguar</option>
+                                    <option value="Jeep">Jeep</option>
+                                    <option value="Kia">Kia</option>
+                                    <option value="Lamborghini">Lamborghini</option>
+                                    <option value="Land Rover">Land Rover</option>
+                                    <option value="Lexus">Lexus</option>
+                                    <option value="Lincoln">Lincoln</option>
+                                    <option value="Maserati">Maserati</option>
+                                    <option value="Mazda">Mazda</option>
+                                    <option value="McLaren">McLaren</option>
+                                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                    <option value="Mini">Mini</option>
+                                    <option value="Mitsubishi">Mitsubishi</option>
+                                    <option value="Nissan">Nissan</option>
+                                    <option value="Pagani">Pagani</option>
+                                    <option value="Peugeot">Peugeot</option>
+                                    <option value="Porsche">Porsche</option>
+                                    <option value="Ram">Ram</option>
+                                    <option value="Renault">Renault</option>
+                                    <option value="Rolls-Royce">Rolls-Royce</option>
+                                    <option value="Saab">Saab</option>
+                                    <option value="Subaru">Subaru</option>
+                                    <option value="Suzuki">Suzuki</option>
+                                    <option value="Tesla">Tesla</option>
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="Volkswagen">Volkswagen</option>
+                                    <option value="Volvo">Volvo</option>
+                                </select> */}
                             </div>
-                        </div>
-                        <div className={styles.input_row}>
-                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
-                                <label htmlFor="ano" className={styles.label}>Ano:</label>
-                                <input type="number" id="ano" name="ano" required className={styles.input} />
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label htmlFor="placa_veiculo" className={styles.label}>Placa:</label>
+                                <input type="text" id="placa_veiculo" name="placa_veiculo_veiculo" required className={styles.input} />
                             </div>
-                            <div className={`${styles.input_wrapper} ${styles.input_medium}`}>
-                                <label htmlFor="cor" className={styles.label}>Cor:</label>
-                                <input type="text" id="cor" name="cor" required className={styles.input} />
+
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label htmlFor="ano_veiculo" className={styles.label}>Ano:</label>
+                                <input type="number" id="ano_veiculo" name="ano_veiculo" required className={styles.input} />
                             </div>
-                        </div>
-                        <div className={styles.footer_form}>
-                            <button type="submit" className={styles.button_submit}>Salvar</button>
-                            <button type="reset" className={styles.button_cancel}>Cancelar</button>
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label htmlFor="cor_veiculo" className={styles.label}>Cor:</label>
+                                <input type="text" id="cor_veiculo" name="cor_veiculo" required className={styles.input} />
+                                {/* <select id="cor" name="cor" required className={`${styles.select} ${styles.input_small_select}`}>
+                                    <option value="Selecione">Selecione</option>
+                                    <option value="Amarelo">Amarelo</option>
+                                    <option value="Azul">Azul</option>
+                                    <option value="Bege">Bege</option>
+                                    <option value="Branco">Branco</option>
+                                    <option value="Cinza">Cinza</option>
+                                    <option value="Dourado">Dourado</option>
+                                    <option value="Laranja">Laranja</option>
+                                    <option value="Marrom">Marrom</option>
+                                    <option value="Preto">Preto</option>
+                                    <option value="Prata">Prata</option>
+                                    <option value="Rosa">Rosa</option>
+                                    <option value="Roxo">Roxo</option>
+                                    <option value="Verde">Verde</option>
+                                    <option value="Vermelho">Vermelho</option>
+                                    <option value="Vinho">Vinho</option>
+                                </select> */}
+                            </div>
+                            <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
+                                <label htmlFor="categoria_veiculo" className={styles.label}>Categoria:</label>
+                                <input type="text" id="categoria_veiculo" name="categoria_veiculo" required className={styles.input} />
+                            </div>
+                            <div className={`${styles.grid_item} ${styles.grid_item_large} ${styles.grid_item_observacoes}`}>
+                                <label htmlFor="observacoes_veiculo" className={styles.label}>Observações</label>
+                                <input type="text" id="observacoes_veiculo" name="observacoes_veiculo" required className={styles.input} />
+                            </div>
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label htmlFor="proprietario_veiculo" className={styles.label}>Proprietário:</label>
+                                <input type="text" id="proprietario_veiculo" name="proprietario_veiculo" required className={styles.input} />
+                            </div>
                         </div>
                     </form>
+                    <div className={styles.footer_form}>
+                        <button type="submit" className={styles.button_submit}>Salvar</button>
+                        <button type="reset" className={styles.button_cancel}>Cancelar</button>
+                    </div>
                     {/* <table id="tabelaVeiculos" className={styles.table}>
                         <thead>
                             <tr>
@@ -210,23 +278,74 @@ export default function Home() {
                         <button id="localizarServico">Localizar</button>
                     </div>
                     <form id="servicoForm" className={styles.form}>
+
                         <input type="hidden" id="servicoId" className={styles.input} />
-                        <div className={styles.input_row}>
-                            <div className={`${styles.input_wrapper} ${styles.input_large}`}>
-                                <label htmlFor="descricao" className={styles.label}>Descrição:</label>
-                                <input type="text" id="descricao" name="descricao" required className={styles.input} />
+
+                        <div className={styles.grid}>
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label for="codigo_servico" className={styles.label}>Código</label>
+                                <input type="number" id="codigo_servico" name="codigo_servico" required className={styles.input} />
                             </div>
-                            <div className={`${styles.input_wrapper} ${styles.input_small}`}>
-                                <label htmlFor="preco" className={styles.label}>Preço:</label>
-                                <input type="number" id="preco" name="preco" required className={styles.input} />
+                            <div className={`${styles.grid_item} ${styles.grid_item_large}`}>
+                                <label htmlFor="nome_servico" className={styles.label}>Nome</label>
+                                <input type="text" id="nome_servico" name="nome_servico" required className={styles.input} />
                             </div>
-                        </div>
-                        <div className={styles.footer_form}>
-                            <button type="submit" className={styles.button_submit}>Salvar</button>
-                            <button type="reset" className={styles.button_cancel}>Cancelar</button>
+                            <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
+                                <label for="categoria_servico" className={styles.label}>Categoria:</label>
+                                <select id="categoria_servico" name="categoria_servico"
+                                    className={`${styles.select} ${styles.grid_item_small}`}>
+                                    <option value="manutencao">Manutenção</option>
+                                    <option value="reparo">Reparo</option>
+                                    <option value="inspecao">Inspeção</option>
+                                    <option value="diagnostico">Diagnóstico</option>
+                                    <option value="eletrico">Elétrico</option>
+                                    <option value="pintura">Pintura</option>
+                                    <option value="suspensao">Suspensão</option>
+                                    <option value="freios">Freios</option>
+                                    <option value="ar_condicionado">Ar Condicionado</option>
+                                    <option value="limpeza">Limpeza</option>
+                                </select>
+                            </div>
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label htmlFor="duracao_servico" className={styles.label}>Duração Estimada:</label>
+                                <select id="duracao_servico" name="duracao_servico"
+                                    className={`${styles.select} ${styles.grid_item_small}`}>
+                                    <option value="30">30 minutos</option>
+                                    <option value="60">1 hora</option>
+                                    <option value="90">1 hora e 30 minutos</option>
+                                    <option value="120">2 horas</option>
+                                    <option value="180">3 horas</option>
+                                    <option value="240">4 horas</option>
+                                    <option value="300">5 horas</option>
+                                    <option value="360">6 horas</option>
+                                    <option value="420">7 horas</option>
+                                    <option value="480">8 horas</option>
+                                </select>
+                            </div>
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label htmlFor="preco_servico" className={styles.label}>Preço:</label>
+                                <input type="number" id="preco_servico" name="preco_servico" required className={styles.input} />
+                            </div>
+
+                            <div className={`${styles.grid_item} ${styles.grid_item_large} ${styles.grid_item_observacoes}`}>
+                                <label htmlFor="observacoes_servico" className={styles.label}>Observações</label>
+                                <input type="text" id="observacoes_servico" name="observacoes_servico" required className={styles.input} />
+                            </div>
+                            <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                                <label for="situacao_servico" className={styles.label}>Situação:</label>
+                                <select id="situacao_servico" name="situacao_servico"
+                                    className={`${styles.select} ${styles.grid_item_small}`}>
+                                    <option value="ativo" className={styles.option} selected>Ativo</option>
+                                    <option value="inativo" className={styles.option}>Inativo</option>
+                                </select>
+                            </div>
                         </div>
                     </form>
-                    <table id="tabelaServicos" className={styles.table}>
+                    <div className={styles.footer_form}>
+                        <button type="submit" className={styles.button_submit}>Salvar</button>
+                        <button type="reset" className={styles.button_cancel}>Cancelar</button>
+                    </div>
+                    {/* <table id="tabelaServicos" className={styles.table}>
                         <thead>
                             <tr>
                                 <th className={styles.th}>Descrição</th>
@@ -234,9 +353,9 @@ export default function Home() {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* Linhas de dados aqui */}
+                            Linhas de dados aqui
                         </tbody>
-                    </table>
+                    </table> */}
                 </div>
 
                 {/* SESSÃO AGENDA */}

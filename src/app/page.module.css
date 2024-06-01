@@ -80,13 +80,14 @@
 .button_group {
   margin: 20px;
   display: grid;
-  width: 40%;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  width: 100%;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 15px;
 }
 
 .button_group button {
   padding: 10px 20px;
+  margin-top: 10px;
   background-color: #333;
   color: white;
   border: none;
@@ -94,6 +95,7 @@
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s;
+  grid-column: span 1;
 }
 
 .button_group button:hover {
@@ -102,14 +104,15 @@
 }
 
 .form {
-  margin-bottom: 20px;
+  margin: 30px 0;
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
+  gap: 30px 15px;
+  
 }
 
 .label {
@@ -126,11 +129,12 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-size: 1em;
+  /* font-size: 1em; */
+  font-size: 18px;
   background-color: #f9f9f9;
 }
 
-.button_submit{
+.button_submit {
   padding: 10px 20px;
   background-color: #ff9d00;
   color: white;
@@ -139,9 +143,8 @@
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s;
-  
-  
   grid-column: span 1;
+  grid-area: 1 / 8 / 2 / 9;
 }
 
 .button_submit:hover {
@@ -150,7 +153,6 @@
 }
 
 .button_cancel {
-  
   background-color: #333;
   color: white;
   border: none;
@@ -159,7 +161,7 @@
   font-size: 1em;
   transition: background-color 0.3s;
   grid-column: span 1;
-
+  grid-area: 1 / 7 / 2 / 8;
 }
 
 
@@ -198,7 +200,8 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-size: 1em;
+  /* font-size: 1em; */
+  font-size: 18px;
   background-color: #f9f9f9;
   appearance: none;
   -webkit-appearance: none;
@@ -222,9 +225,6 @@
   display: flex;
 }
 
-
-
-
 .grid {
   display: contents;
 }
@@ -246,8 +246,9 @@
   grid-column: span 6;
 }
 
-
-
+.grid_item_observacoes {
+  grid-column: span 10;
+}
 
 .input_small {
   flex: 1;
@@ -277,10 +278,9 @@
 }
 
 .footer_form {
-  grid-column: span 12;
+  position: relative;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 16px;
+  gap: 15px;
+  margin: 100px 40px;
 }
-
-

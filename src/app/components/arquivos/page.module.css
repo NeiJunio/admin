@@ -80,9 +80,10 @@
 .button_group {
   margin: 20px;
   display: grid;
-  width: 40%;
-  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  grid-template-columns: repeat(8, 1fr);
   gap: 10px;
+  background-color: red;
 }
 
 .button_group button {
