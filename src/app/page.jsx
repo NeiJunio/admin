@@ -89,7 +89,7 @@ export default function Home() {
                         <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
                             <label for="sexo_cliente" className={styles.label}>Sexo:</label>
                             <select id="sexo_cliente" name="sexo_cliente" required className={`${styles.select} ${styles.input_small_select}`}>
-                                <option value="">Selecionar</option>
+                                <option value="" disabled selected>Selecionar</option>
                                 <option value="feminino">Feminino</option>
                                 <option value="masculino">Masculino</option>
                                 <option value="outro">Outro</option>
@@ -103,7 +103,7 @@ export default function Home() {
 
                         <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
                             <label for="telefone_cliente" className={styles.label}>Telefone:</label>
-                            <input type="tel" id="telefone_cliente" name="telefone_cliente" required className={styles.input} placeholder="(xx) xxxxxx - xxxxx" />
+                            <input type="tel" id="telefone_cliente" name="telefone_cliente" required className={styles.input} placeholder="(xx) xxxxx - xxxxx" />
                         </div>
 
                         <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
@@ -236,7 +236,30 @@ export default function Home() {
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
                                 <label htmlFor="categoria_veiculo" className={styles.label}>Categoria:</label>
-                                <input type="text" id="categoria_veiculo" name="categoria_veiculo" required className={styles.input} />
+                                <select id="categoria_veiculo" name="categoria_veiculo" required className={`${styles.select} ${styles.input_medium_select}`}>
+                                    <option value="" disabled selected>Selecione</option>
+                                    <option value="hatch">Hatch</option>
+                                    <option value="sedan">Sedan</option>
+                                    <option value="suv">SUV</option>
+                                    <option value="pickup">Pickup</option>
+                                    <option value="van">Van</option>
+                                    <option value="moto">Moto</option>
+                                    <option value="caminhao">Caminhão</option>
+                                    <option value="onibus">Ônibus</option>
+                                </select>
+                            </div>
+                            <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
+                                <label htmlFor="combustivel_veiculo" className={styles.label}>Combustível:</label>
+                                <select id="combustivel_veiculo" name="combustivel_veiculo" required className={`${styles.select} ${styles.input_medium_select}`}>
+                                    <option value="" disabled selected>Selecione</option>
+                                    <option value="gasolina">Gasolina</option>
+                                    <option value="alcool">Álcool</option>
+                                    <option value="diesel">Diesel</option>
+                                    <option value="flex">Flex</option>
+                                    <option value="gnv">GNV (Gás Natural Veicular)</option>
+                                    <option value="eletrico">Elétrico</option>
+                                    <option value="hibrido">Híbrido</option>
+                                </select>
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_large} ${styles.grid_item_observacoes}`}>
                                 <label htmlFor="observacoes_veiculo" className={styles.label}>Observações</label>
@@ -326,7 +349,10 @@ export default function Home() {
                                 <label htmlFor="preco_servico" className={styles.label}>Preço:</label>
                                 <input type="number" id="preco_servico" name="preco_servico" required className={styles.input} />
                             </div>
-
+                            <div className={`${styles.grid_item} ${styles.grid_item_large} ${styles.grid_item_descricao}`}>
+                                <label htmlFor="descricao_servico" className={styles.label}>Descrição</label>
+                                <input type="text" id="descricao_servico" name="descricao_servico" required className={styles.input} />
+                            </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_large} ${styles.grid_item_observacoes}`}>
                                 <label htmlFor="observacoes_servico" className={styles.label}>Observações</label>
                                 <input type="text" id="observacoes_servico" name="observacoes_servico" required className={styles.input} />
