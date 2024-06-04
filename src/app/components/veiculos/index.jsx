@@ -1,4 +1,4 @@
-import styles from './page.module.css';
+import styles from './index.module.css';
 
 export default function Veiculos() {
     return(
@@ -12,20 +12,20 @@ export default function Veiculos() {
                     </div>
                     <form id="veiculoForm" className={styles.form}>
 
-                        <input type="hidden" id="veiculoId" className={styles.input} />
+                        <input type="hidden" id="veiculoId" className={styles.input_veiculos} />
 
                         <div className={styles.grid}>
                             <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                                <label htmlFor="codigo_veiculo" className={styles.label}>Código:</label>
-                                <input type="text" id="placa_veiculo" name="placa_veiculo" required className={styles.input} />
+                                <label htmlFor="codigo_veiculo" className={styles.label_veiculos}>Código:</label>
+                                <input type="text" id="placa_veiculo" name="placa_veiculo" required className={styles.input_veiculos} />
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_large}`}>
-                                <label htmlFor="modelo_veiculo" className={styles.label}>Modelo:</label>
-                                <input type="text" id="modelo_veiculo" name="modelo_veiculo" required className={styles.input} />
+                                <label htmlFor="modelo_veiculo" className={styles.label_veiculos}>Modelo:</label>
+                                <input type="text" id="modelo_veiculo" name="modelo_veiculo" required className={styles.input_veiculos} />
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                                <label htmlFor="marca_veiculo" className={styles.label}>Marca:</label>
-                                <input type="text" id="marca_veiculo" name="marca_veiculo" required className={styles.input} />
+                                <label htmlFor="marca_veiculo" className={styles.label_veiculos}>Marca:</label>
+                                <input type="text" id="marca_veiculo" name="marca_veiculo" required className={styles.input_veiculos} />
                                 {/* <select id="marca" name="marca" required className={`${styles.select} ${styles.input_small_select}`}>
                                     <option value="Selecione">Selecione</option>
                                     <option value="Acura">Acura</option>
@@ -79,17 +79,17 @@ export default function Veiculos() {
                                 </select> */}
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                                <label htmlFor="placa_veiculo" className={styles.label}>Placa:</label>
-                                <input type="text" id="placa_veiculo" name="placa_veiculo_veiculo" required className={styles.input} />
+                                <label htmlFor="placa_veiculo" className={styles.label_veiculos}>Placa:</label>
+                                <input type="text" id="placa_veiculo" name="placa_veiculo_veiculo" required className={styles.input_veiculos} />
                             </div>
 
                             <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                                <label htmlFor="ano_veiculo" className={styles.label}>Ano:</label>
-                                <input type="number" id="ano_veiculo" name="ano_veiculo" required className={styles.input} />
+                                <label htmlFor="ano_veiculo" className={styles.label_veiculos}>Ano:</label>
+                                <input type="number" id="ano_veiculo" name="ano_veiculo" required className={styles.input_veiculos} />
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                                <label htmlFor="cor_veiculo" className={styles.label}>Cor:</label>
-                                <input type="text" id="cor_veiculo" name="cor_veiculo" required className={styles.input} />
+                                <label htmlFor="cor_veiculo" className={styles.label_veiculos}>Cor:</label>
+                                <input type="text" id="cor_veiculo" name="cor_veiculo" required className={styles.input_veiculos} />
                                 {/* <select id="cor" name="cor" required className={`${styles.select} ${styles.input_small_select}`}>
                                     <option value="Selecione">Selecione</option>
                                     <option value="Amarelo">Amarelo</option>
@@ -110,7 +110,7 @@ export default function Veiculos() {
                                 </select> */}
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
-                                <label htmlFor="categoria_veiculo" className={styles.label}>Categoria:</label>
+                                <label htmlFor="categoria_veiculo" className={styles.label_veiculos}>Categoria:</label>
                                 <select id="categoria_veiculo" name="categoria_veiculo" required className={`${styles.select} ${styles.input_medium_select}`}>
                                     <option value="" disabled selected>Selecione</option>
                                     <option value="hatch">Hatch</option>
@@ -124,7 +124,7 @@ export default function Veiculos() {
                                 </select>
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
-                                <label htmlFor="combustivel_veiculo" className={styles.label}>Combustível:</label>
+                                <label htmlFor="combustivel_veiculo" className={styles.label_veiculos}>Combustível:</label>
                                 <select id="combustivel_veiculo" name="combustivel_veiculo" required className={`${styles.select} ${styles.input_medium_select}`}>
                                     <option value="" disabled selected>Selecione</option>
                                     <option value="gasolina">Gasolina</option>
@@ -137,12 +137,12 @@ export default function Veiculos() {
                                 </select>
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_large} ${styles.grid_item_observacoes}`}>
-                                <label htmlFor="observacoes_veiculo" className={styles.label}>Observações</label>
-                                <input type="text" id="observacoes_veiculo" name="observacoes_veiculo" required className={styles.input} />
+                                <label htmlFor="observacoes_veiculo" className={styles.label_veiculos}>Observações</label>
+                                <input type="text" id="observacoes_veiculo" name="observacoes_veiculo" required className={styles.input_veiculos} />
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                                <label htmlFor="proprietario_veiculo" className={styles.label}>Proprietário:</label>
-                                <input type="text" id="proprietario_veiculo" name="proprietario_veiculo" required className={styles.input} />
+                                <label htmlFor="proprietario_veiculo" className={styles.label_veiculos}>Proprietário:</label>
+                                <input type="text" id="proprietario_veiculo" name="proprietario_veiculo" required className={styles.input_veiculos} />
                             </div>
                         </div>
                     </form>

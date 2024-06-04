@@ -35,13 +35,13 @@
   gap: 30px 15px;
 }
 
-.label_servicos {
+.label_veiculos {
   display: block;
   margin-bottom: 8px;
   color: #333;
 }
 
-.input_servicos {
+.input_veiculos {
   width: calc(100% - 20px);
   padding: 10px;
   margin-top: 5px;
@@ -141,7 +141,7 @@
   background-color: #fff;
 }
 
-.select_servicos {
+.select_veiculos {
   width: calc(100% - 20px);
   padding: 10px;
   margin-top: 5px;
@@ -160,16 +160,16 @@
   cursor: pointer;
 }
 
-.select_servicos:hover {
+.select_veiculos:hover {
   border-color: #ff9d00;
 }
 
-.select_servicos:focus {
+.select_veiculos:focus {
   border-color: #ff9d00;
   outline: none;
 }
 
-.input_servicos:focus {
+.input_veiculos:focus {
   border-color: #ff9d00;
   outline: none;
 }
