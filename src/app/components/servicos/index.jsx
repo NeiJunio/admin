@@ -12,19 +12,19 @@ export default function Servicos() {
             </div>
             <form id="servicoForm" className={styles.form}>
 
-                <input type="hidden" id="servicoId" className={styles.input} />
+                <input type="hidden" id="servicoId" className={styles.input_servicos} />
 
                 <div className={styles.grid}>
                     <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                        <label for="codigo_servico" className={styles.label}>Código</label>
-                        <input type="number" id="codigo_servico" name="codigo_servico" required className={styles.input} />
+                        <label for="codigo_servico" className={styles.label_servicos}>Código</label>
+                        <input type="number" id="codigo_servico" name="codigo_servico" required className={styles.input_servicos} />
                     </div>
                     <div className={`${styles.grid_item} ${styles.grid_item_large}`}>
-                        <label htmlFor="nome_servico" className={styles.label}>Nome</label>
-                        <input type="text" id="nome_servico" name="nome_servico" required className={styles.input} />
+                        <label htmlFor="nome_servico" className={styles.label_servicos}>Nome</label>
+                        <input type="text" id="nome_servico" name="nome_servico" required className={styles.input_servicos} />
                     </div>
                     <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
-                        <label for="categoria_servico" className={styles.label}>Categoria:</label>
+                        <label for="categoria_servico" className={styles.label_servicos}>Categoria:</label>
                         <select id="categoria_servico" name="categoria_servico"
                             className={`${styles.select} ${styles.grid_item_small}`}>
                             <option value="manutencao">Manutenção</option>
@@ -40,7 +40,7 @@ export default function Servicos() {
                         </select>
                     </div>
                     <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                        <label htmlFor="duracao_servico" className={styles.label}>Duração Estimada:</label>
+                        <label htmlFor="duracao_servico" className={styles.label_servicos}>Duração Estimada:</label>
                         <select id="duracao_servico" name="duracao_servico"
                             className={`${styles.select} ${styles.grid_item_small}`}>
                             <option value="30">30 minutos</option>
@@ -56,19 +56,19 @@ export default function Servicos() {
                         </select>
                     </div>
                     <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                        <label htmlFor="preco_servico" className={styles.label}>Preço:</label>
-                        <input type="number" id="preco_servico" name="preco_servico" required className={styles.input} />
+                        <label htmlFor="preco_servico" className={styles.label_servicos}>Preço:</label>
+                        <input type="number" id="preco_servico" name="preco_servico" required className={styles.input_servicos} />
                     </div>
                     <div className={`${styles.grid_item} ${styles.grid_item_large} ${styles.grid_item_descricao}`}>
-                        <label htmlFor="descricao_servico" className={styles.label}>Descrição</label>
-                        <input type="text" id="descricao_servico" name="descricao_servico" required className={styles.input} />
+                        <label htmlFor="descricao_servico" className={styles.label_servicos}>Descrição</label>
+                        <input type="text" id="descricao_servico" name="descricao_servico" required className={styles.input_servicos} />
                     </div>
                     <div className={`${styles.grid_item} ${styles.grid_item_large} ${styles.grid_item_observacoes}`}>
-                        <label htmlFor="observacoes_servico" className={styles.label}>Observações</label>
-                        <input type="text" id="observacoes_servico" name="observacoes_servico" required className={styles.input} />
+                        <label htmlFor="observacoes_servico" className={styles.label_servicos}>Observações</label>
+                        <input type="text" id="observacoes_servico" name="observacoes_servico" required className={styles.input_servicos} />
                     </div>
                     <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                        <label for="situacao_servico" className={styles.label}>Situação:</label>
+                        <label for="situacao_servico" className={styles.label_servicos}>Situação:</label>
                         <select id="situacao_servico" name="situacao_servico"
                             className={`${styles.select} ${styles.grid_item_small}`}>
                             <option value="ativo" className={styles.option} selected>Ativo</option>

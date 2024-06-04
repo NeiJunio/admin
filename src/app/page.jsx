@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import CadCliente from "./components/cadcliente";
 import Veiculos from "./components/veiculos"; 
 import Servicos from "./components/servicos";
-import FullCalendar from "./components/agenda/page";
+import FullCalendar from "./components/agenda/index";
 
 export default function Home() {
 
