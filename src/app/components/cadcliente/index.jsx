@@ -74,7 +74,6 @@ export default function CadCliente() {
                     <label for="email_cliente" className={styles.label_cliente}>Email:</label>
                     <input type="email_cliente" id="email_cliente" name="email_cliente" required className={styles.input_cliente} placeholder="exemplo@exemplo.com" />
                 </div>
-                
                 <div className={`${styles.grid_item}  ${styles.grid_item_observacoes}`}>
                     <label htmlFor="observacoes_cliente" className={styles.label_cliente}>Observações</label>
                     <input type="text" id="observacoes_cliente" name="observacoes_cliente" required className={styles.input_cliente} />
