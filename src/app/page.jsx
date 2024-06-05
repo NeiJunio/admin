@@ -46,7 +46,7 @@ export default function Home() {
     return (
         <div className={styles.grid_container}>
             <div className={styles.header}>
-            <Button onPress={onOpen}>Open Modal</Button>
+            
                 <h1>Painel Administrativo da Mecânica</h1>
             </div>
             <div className={styles.sidebar}>
@@ -74,6 +74,7 @@ export default function Home() {
 
 
 
+<Button onPress={onOpen}>Open Modal</Button>
 <>
      
 
