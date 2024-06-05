@@ -1,8 +1,14 @@
+'use client';
+
 import styles from './index.module.css';
 
-export default function CadCliente() { 
+import React from "react";
 
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 
+export default function CadCliente() {
+
+    const { isOpen, onOpen, onOpenChange } = useDisclosure();
     return (
         <div id="clientes" className={`${styles.content_section}`}>
             <h2>Gerenciamento de Clientes</h2>
@@ -11,7 +17,7 @@ export default function CadCliente() {
                 <button id="alterarCliente">Alterar</button>
                 <button id="excluirCliente">Excluir</button>
                 {/* <button id="localizarCliente" onclick={onOpen}>Localizar</button> */}
-                <button id="localizarCliente" onclick={() => {}}>Localizar</button>
+                <button id="localizarCliente" onclick={() => { isOpen }}>Localizar</button>
             </div>
 
             <form id="clienteForm" className={styles.form}>
@@ -19,7 +25,7 @@ export default function CadCliente() {
                 <input type="hidden" id="clienteId" className={styles.input_cliente} />
 
                 <div className={styles.grid}>
-                    <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                    <div className={`${styles.grid_item} ${styles.grid_item_small_2}`}>
                         <label for="codigo_cliente" className={styles.label_cliente}>Código</label>
                         <input type="number" id="codigo_cliente" name="codigo_cliente" required className={styles.input_cliente} />
                     </div>
@@ -50,16 +56,6 @@ export default function CadCliente() {
                     </select>
                 </div>
 
-                <div className={`${styles.grid_item} ${styles.grid_item_large}`}>
-                    <label for="email_cliente" className={styles.label_cliente}>Email:</label>
-                    <input type="email_cliente" id="email_cliente" name="email_cliente" required className={styles.input_cliente} placeholder="exemplo@exemplo.com" />
-                </div>
-
-                <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
-                    <label for="telefone_cliente" className={styles.label_cliente}>Telefone:</label>
-                    <input type="tel" id="telefone_cliente" name="telefone_cliente" required className={styles.input_cliente} placeholder="(xx) xxxxx - xxxxx" />
-                </div>
-
                 <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
                     <label for="nivel_acesso" className={styles.label_cliente}>Nível de Acesso:</label>
                     <select id="nivel_acesso" name="nivel_acesso"
@@ -68,7 +64,17 @@ export default function CadCliente() {
                         <option value="admin" className={styles.option}>Administrador</option>
                     </select>
                 </div>
-                <div className={`${styles.grid_item} ${styles.grid_item_large} ${styles.grid_item_observacoes}`}>
+                
+
+                <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
+                    <label for="telefone_cliente" className={styles.label_cliente}>Telefone:</label>
+                    <input type="tel" id="telefone_cliente" name="telefone_cliente" required className={styles.input_cliente} placeholder="(xx) xxxxx - xxxxx" />
+                </div>
+                <div className={`${styles.grid_item} ${styles.grid_item_observacoes}`}>
+                    <label for="email_cliente" className={styles.label_cliente}>Email:</label>
+                    <input type="email_cliente" id="email_cliente" name="email_cliente" required className={styles.input_cliente} placeholder="exemplo@exemplo.com" />
+                </div>
+                <div className={`${styles.grid_item}  ${styles.grid_item_observacoes}`}>
                     <label htmlFor="observacoes_cliente" className={styles.label_cliente}>Observações</label>
                     <input type="text" id="observacoes_cliente" name="observacoes_cliente" required className={styles.input_cliente} />
                 </div>
@@ -80,8 +86,53 @@ export default function CadCliente() {
             </div>
 
             {/* MODAL */}
-            
 
+            <Button onPress={onOpen}>Open Modal</Button>
+            <>
+
+
+                <Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} isKeyboardDismissDisabled={true} className={styles.modal}>
+                    <ModalContent className={styles.modal_content}>
+                        {(onClose) => (
+                            <>
+
+                                <ModalHeader className={styles.header_modal}>Modal Title</ModalHeader>
+                                <ModalBody className={styles.body_modal}>
+                                    {/* <fieldset className={styles.fieldset}>
+                                        <label htmlFor="" className={styles.label}>NOME</label>
+                                        <input type="text" className={styles.input} required />
+                                    </fieldset>
+
+                                    <fieldset className={styles.fieldset}>
+                                        <label htmlFor="" className={styles.label}>TELEFONE</label>
+                                        <input type="text" className={styles.input} required />
+                                    </fieldset>
+
+                                    <fieldset className={styles.fieldset}>
+                                        <label htmlFor="" className={styles.label}>EMAIL</label>
+                                        <input type="text" className={styles.input} required />
+                                    </fieldset>
+
+                                    <fieldset className={styles.fieldset}>
+                                        <label htmlFor="" className={styles.label}>SENHA</label>
+                                        <input type="password" className={styles.input} required />
+                                    </fieldset> */}
+
+
+                                </ModalBody>
+                                <ModalFooter className={styles.footer_modal}>
+                                    {/* <Button className={`${styles.button} ${styles.fechar}`} color="danger" variant="light" onPress={onClose}>
+                                        Close
+                                    </Button>
+                                    <Button className={`${styles.button} ${styles.confirmar}`} color="primary" onPress={onClose}>
+                                        Action
+                                    </Button> */}
+                                </ModalFooter>
+                            </>
+                        )}
+                    </ModalContent>
+                </Modal>
+            </>
 
         </div>
     );
