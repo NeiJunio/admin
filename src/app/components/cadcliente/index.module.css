@@ -98,8 +98,11 @@
   flex-direction: column;
 }
 
-.grid_item_small {
+.grid_item_small_2 {
   grid-column: span 2;
+}
+.grid_item_small {
+  grid-column: span 3;
 }
 
 .grid_item_medium {
@@ -111,7 +114,7 @@
 }
 
 .grid_item_observacoes {
-  grid-column: span 10;
+  grid-column: span 12;
 }
 
 .grid_item_descricao {
@@ -194,36 +197,40 @@
 
 /* MODAL */
 
-.header{
+.modal {
+  position: fixed;
+  margin: 10px;
+ inset: 10%;
+ height: auto;
+  background-color: rgba(255, 29, 29, 0.7);
+  backdrop-filter: blur(4px);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 10px;
-  height: 50px;
-  font-size: 25px;
-  background-color: red;
-}
-
-.modal{
-  height: 600px;
-  width: 450px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  border: 2px solid #000;
-  border-radius: 35px;
   align-items: center;
-  z-index: 50;
+  z-index: 999;
+  flex-direction: column;
+  border-radius: 50px;
+  /* transition: 0.5s ease-in; */
+  /* border: yellowgreen solid 14px; */
 }
 
-.body{
-  margin: auto 10px;
-  text-align: justify;
-  background-color: red;
-  font-size: 18px;
-  line-height: 25px;
-  padding: 10px;
+.header_modal{
+  height: 50px;
+  width: 100%;
+  background-color: yellow;
+}
+
+
+.body_modal{
+  height: 250px;
+  width: 100%;
+  background-color: blue;
+}
+
+.footer_modal{
+  height: 50px;
+  width: 100%;
+  background-color: yellow;
 }
 
 .fieldset{
@@ -254,3 +261,7 @@
 .confirmar{
   background-color: rgb(9, 255, 5);
 }
+
+
+
+
