@@ -1,6 +1,8 @@
 import styles from './index.module.css';
 
-export default function CadCliente() {
+export default function CadCliente() { 
+
+
     return (
         <div id="clientes" className={`${styles.content_section}`}>
             <h2>Gerenciamento de Clientes</h2>
@@ -8,7 +10,8 @@ export default function CadCliente() {
                 <button id="novoCliente">Novo</button>
                 <button id="alterarCliente">Alterar</button>
                 <button id="excluirCliente">Excluir</button>
-                <button id="localizarCliente">Localizar</button>
+                {/* <button id="localizarCliente" onclick={onOpen}>Localizar</button> */}
+                <button id="localizarCliente" onclick={() => {}}>Localizar</button>
             </div>
 
             <form id="clienteForm" className={styles.form}>
@@ -75,6 +78,11 @@ export default function CadCliente() {
                 <button type="button" onclick="cancelarAcao()" className={styles.button_cancel}>Cancelar</button>
                 <button type="submit" className={styles.button_submit}>Salvar</button>
             </div>
+
+            {/* MODAL */}
+            
+
+
         </div>
     );
 }
