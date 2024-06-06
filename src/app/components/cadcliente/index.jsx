@@ -59,7 +59,7 @@ export default function CadCliente() {
                 <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
                     <label for="nivel_acesso" className={styles.label_cliente}>Nível de Acesso:</label>
                     <select id="nivel_acesso" name="nivel_acesso"
-                        className={`${styles.select_cliente} ${styles.grid_item_small}`}>
+                        className={`${styles.select_cliente} ${styles.input_small_select}`}>
                         <option value="user" className={styles.option}>Usuário</option>
                         <option value="admin" className={styles.option}>Administrador</option>
                     </select>
@@ -68,8 +68,9 @@ export default function CadCliente() {
 
                 <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
                     <label for="telefone_cliente" className={styles.label_cliente}>Telefone:</label>
-                    <input type="tel" id="telefone_cliente" name="telefone_cliente" required className={styles.input_cliente} placeholder="(xx) xxxxx - xxxxx" />
+                    <input type="tel" id="telefone_cliente" name="telefone_cliente" required className={` ${styles.input_cliente}`} placeholder="(xx) xxxxx - xxxxx" />
                 </div>
+
                 <div className={`${styles.grid_item} ${styles.grid_item_observacoes}`}>
                     <label for="email_cliente" className={styles.label_cliente}>Email:</label>
                     <input type="email_cliente" id="email_cliente" name="email_cliente" required className={styles.input_cliente} placeholder="exemplo@exemplo.com" />

@@ -101,8 +101,14 @@
 .grid_item_small_2 {
   grid-column: span 2;
 }
+
 .grid_item_small {
   grid-column: span 3;
+}
+
+.input_small_select {
+  flex: 1;
+
 }
 
 .grid_item_medium {
@@ -151,7 +157,7 @@
   border: 2px solid #8d8c8c;
   border-radius: 4px;
   box-sizing: border-box;
-  /* font-size: 1em; */
+  /* font-size: 1em !important; */
   font-size: 18px;
   background-color: #f9f9f9;
   appearance: none;
@@ -177,10 +183,7 @@
   outline: none;
 }
 
-.input_small_select {
-  flex: 1;
 
-}
 
 .input_medium_select {
   flex: 2;
