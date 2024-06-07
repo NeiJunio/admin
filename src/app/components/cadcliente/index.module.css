@@ -98,30 +98,30 @@
   flex-direction: column;
 }
 
-.grid_item_small_2 {
+.grid_codigo {
   grid-column: span 2;
 }
 
-.grid_item_small {
+.grid_telefone, .grid_data, .grid_sexo, .grid_acesso {
   grid-column: span 3;
 }
 
-.input_small_select {
-  flex: 1;
-
-}
-
-.grid_item_medium {
+.grid_cpf {
   grid-column: span 4;
 }
 
-.grid_item_large {
+.grid_nome {
   grid-column: span 6;
 }
 
-.grid_item_observacoes {
+.grid_observacoes, .grid_email  {
   grid-column: span 12;
 }
+
+.input_sexo, .input_acesso {
+  flex: 1;
+}
+
 
 .grid_item_descricao {
   grid-column: span 8;
@@ -152,7 +152,7 @@
 
 .select_cliente {
   width: calc(100% - 20px);
-  padding: 10px;
+  padding: 8px;
   margin-top: 5px;
   border: 2px solid #8d8c8c;
   border-radius: 4px;

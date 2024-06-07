@@ -27,7 +27,7 @@ export default function Veiculos() {
                                 <label htmlFor="marca_veiculo" className={styles.label_veiculos}>Marca:</label>
                                 <input type="text" id="marca_veiculo" name="marca_veiculo" required className={styles.input_veiculos} />
                                 {/* <select id="marca" name="marca" required className={`${styles.select} ${styles.input_small_select}`}>
-                                    <option value="Selecione">Selecione</option>
+                                    <option value="Selecione" disabled>Selecione</option>
                                     <option value="Acura">Acura</option>
                                     <option value="Alfa Romeo">Alfa Romeo</option>
                                     <option value="Aston Martin">Aston Martin</option>
@@ -89,8 +89,8 @@ export default function Veiculos() {
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
                                 <label htmlFor="cor_veiculo" className={styles.label_veiculos}>Cor:</label>
-                                <input type="text" id="cor_veiculo" name="cor_veiculo" required className={styles.input_veiculos} />
-                                {/* <select id="cor" name="cor" required className={`${styles.select} ${styles.input_small_select}`}>
+                                {/* <input type="text" id="cor_veiculo" name="cor_veiculo" required className={styles.input_veiculos} /> */}
+                                <select id="cor" name="cor" required className={`${styles.select} ${styles.input_small_select}`}>
                                     <option value="Selecione">Selecione</option>
                                     <option value="Amarelo">Amarelo</option>
                                     <option value="Azul">Azul</option>
@@ -107,7 +107,8 @@ export default function Veiculos() {
                                     <option value="Verde">Verde</option>
                                     <option value="Vermelho">Vermelho</option>
                                     <option value="Vinho">Vinho</option>
-                                </select> */}
+                                    <option value="Personalizado">Personalizado</option>
+                                </select>
                             </div>
                             <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
                                 <label htmlFor="categoria_veiculo" className={styles.label_veiculos}>Categoria:</label>
