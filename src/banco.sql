@@ -34,16 +34,16 @@ CREATE TABLE IF NOT EXISTS `servicos` (
 	PRIMARY KEY (`serv_id`)
 );
 
-CREATE TABLE IF NOT EXISTS `agendamentos` (
-	`agend_id` int AUTO_INCREMENT NOT NULL UNIQUE,
-	`veic_usu_id` int NOT NULL,
-	`agend_data` date NOT NULL,
-	`agend_horario` time NOT NULL,
-	`agend_observ` int NOT NULL,
-	amb_id 
+-- CREATE TABLE IF NOT EXISTS `agendamentos` (
+-- 	`agend_id` int AUTO_INCREMENT NOT NULL UNIQUE,
+-- 	`veic_usu_id` int NOT NULL,
+-- 	`agend_data` date NOT NULL,
+-- 	`agend_horario` time NOT NULL,
+-- 	`agend_observ` int NOT NULL,
+-- 	amb_id 
 
-	PRIMARY KEY (`agend_id`)
-);
+-- 	PRIMARY KEY (`agend_id`)
+-- );
 
 CREATE TABLE IF NOT EXISTS `veiculo_usuario` (
 	`veic_usu_id` int AUTO_INCREMENT NOT NULL UNIQUE,
