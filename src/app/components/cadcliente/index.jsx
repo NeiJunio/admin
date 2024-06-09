@@ -50,9 +50,9 @@ export default function CadCliente() {
                     <label for="sexo_cliente" className={styles.label_cliente}>Sexo:</label>
                     <select id="sexo_cliente" name="sexo_cliente" required className={`${styles.select_cliente} ${styles.input_sexo}`}>
                         <option value="" disabled selected>Selecionar</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="outro">Outro</option>
+                        <option value="0">Masculino</option>
+                        <option value="1">Feminino</option>
+                        <option value="2">Outro</option>
                     </select>
                 </div>
 
@@ -60,8 +60,8 @@ export default function CadCliente() {
                     <label for="nivel_acesso" className={styles.label_cliente}>Nível de Acesso:</label>
                     <select id="nivel_acesso" name="nivel_acesso"
                         className={`${styles.select_cliente} ${styles.input_acesso}`}>
-                        <option value="user" className={styles.option}>Usuário</option>
-                        <option value="admin" className={styles.option}>Administrador</option>
+                        <option value="0" className={styles.option}>Usuário</option>
+                        <option value="1" className={styles.option}>Administrador</option>
                     </select>
                 </div>
                 
