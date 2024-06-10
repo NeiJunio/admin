@@ -78,6 +78,21 @@ CREATE TABLE IF NOT EXISTS `modelos` (
 	PRIMARY KEY (`mod_id`)
 );
 
+CREATE TABLE IF NOT EXISTS `disponibilidade` (
+	`disp_id` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`disp_dia` char(3) NOT NULL,
+	`disp_periodo` tinyint NOT NULL,
+	`disp_hr_ini` time NOT NULL,
+	`disp_hr_fin` time NOT NULL,
+	PRIMARY KEY (`disp_id`)
+);
+
+CREATE TABLE IF NOT EXISTS `indisponibilidade` (
+	`indisp_id` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`indisp_data` date NOT NULL,
+	PRIMARY KEY (`indisp_id`)
+);
+
 
 ALTER TABLE `veiculos` ADD CONSTRAINT `veiculos_fk1` FOREIGN KEY (`mod_id`) REFERENCES `modelos`(`mod_id`);
 
