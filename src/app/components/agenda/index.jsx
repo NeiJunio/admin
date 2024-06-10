@@ -78,6 +78,10 @@ const FullCalendar = () => {
             events: events,
             dateClick: handleDateClick,
             eventClick: handleEventClick,
+            slotMinTime: '08:00:00', // Define a hora inicial da visualização
+            slotMaxTime: '18:00:00', // Define a hora final da visualização
+            minTime: '08:00:00',     // Define a hora inicial para eventos
+            maxTime: '18:00:00'      // Define a hora final para eventos
         });
 
         calendar.render();

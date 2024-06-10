@@ -27,6 +27,8 @@ export default function Servicos() {
                         <label for="categoria_servico" className={styles.label_servicos}>Categoria:</label>
                         <select id="categoria_servico" name="categoria_servico"
                             className={`${styles.select} ${styles.grid_item_small}`}>
+
+                                
                             <option value="manutencao">Manutenção</option>
                             <option value="reparo">Reparo</option>
                             <option value="inspecao">Inspeção</option>
