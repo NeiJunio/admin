@@ -103,7 +103,7 @@
 }
 
 .grid_telefone, .grid_data, .grid_sexo, .grid_acesso {
-  grid-column: span 3;
+  grid-column: span 4;
 }
 
 .grid_cpf {
@@ -116,6 +116,9 @@
 
 .grid_observacoes, .grid_email  {
   grid-column: span 12;
+}
+.grid_email  {
+  grid-column: span 8;
 }
 
 .input_sexo, .input_acesso {
@@ -268,3 +271,34 @@
 
 
 
+@media (min-width: 769px) and (max-width: 1150px) {
+  /* Regras para tablets */
+  .grid {
+    display: contents;
+  }
+  
+  .grid_item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grid_codigo {
+    grid-column: span 3;
+  }
+  
+  .grid_telefone, .grid_data, .grid_sexo, .grid_acesso {
+    grid-column: span 6;
+  }
+  
+  .grid_cpf {
+    grid-column: span 3;
+  }
+  
+  .grid_nome {
+    grid-column: span 6;
+  }
+  
+  .grid_observacoes, .grid_email  {
+    grid-column: span 12;
+  }
+}
