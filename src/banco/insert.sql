@@ -8,3 +8,8 @@ INSERT INTO usuarios (usu_nome, usu_cpf, usu_data_nasc, usu_sexo, usu_telefone, 
                     
 
 
+insert into categorias (cat_id, cat_nome) VALUES
+                        (1, 'Carro')
+                        (2, 'Caminhao')
+                        (3, 'Moto')
+                        (4, 'Nautica')

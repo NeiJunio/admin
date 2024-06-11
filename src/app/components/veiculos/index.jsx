@@ -113,6 +113,10 @@ export default function Veiculos() {
                             <div className={`${styles.grid_item} ${styles.grid_item_medium}`}>
                                 <label htmlFor="categoria_veiculo" className={styles.label_veiculos}>Categoria:</label>
                                 <select id="categoria_veiculo" name="categoria_veiculo" required className={`${styles.select} ${styles.input_medium_select}`}>
+                                <option value="1">Carro</option>
+                                <option value="2">Caminhão</option>
+                                <option value="3">Moto</option>
+
                                     <option value="" disabled selected>Selecione</option>
                                     <option value="hatch">Hatch</option>
                                     <option value="sedan">Sedan</option>

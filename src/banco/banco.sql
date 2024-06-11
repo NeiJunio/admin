@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `servicos` (
 
 CREATE TABLE IF NOT EXISTS `agendamentos` (
 	`agend_id` int AUTO_INCREMENT NOT NULL UNIQUE,
-	`cli_id` int NOT NULL,
+	`usu_id` int NOT NULL,
 	`veic_id` int NOT NULL,
 	`serv_id` int NOT NULL,
 	`agend_data` int NOT NULL,
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `indisponibilidade` (
 
 ALTER TABLE `veiculos` ADD CONSTRAINT `veiculos_fk1` FOREIGN KEY (`mod_id`) REFERENCES `modelos`(`mod_id`);
 
-ALTER TABLE `agendamentos` ADD CONSTRAINT `agendamentos_fk1` FOREIGN KEY (`cli_id`) REFERENCES `cliente`(`cli_id`);
+ALTER TABLE `agendamentos` ADD CONSTRAINT `agendamentos_fk1` FOREIGN KEY (`usu_id`) REFERENCES `usuarios`(`usu_id`);
 ALTER TABLE `veiculo_usuario` ADD CONSTRAINT `veiculo_usuario_fk1` FOREIGN KEY (`veic_id`) REFERENCES `veiculos`(`veic_id`);
 
 ALTER TABLE `veiculo_usuario` ADD CONSTRAINT `veiculo_usuario_fk2` FOREIGN KEY (`usu_id`) REFERENCES `usuarios`(`usu_id`);
