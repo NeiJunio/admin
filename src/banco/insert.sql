@@ -1,15 +1,296 @@
 -- INSERT's PARA TABELA USUÁRIOS
 
-INSERT INTO usuarios (usu_nome, usu_cpf, usu_data_nasc, usu_sexo, usu_telefone, usu_email, usu_observ, usu_acesso, usu_senha) VALUES
-                     ('José Oliveira', '321.654.987-00', '1995-10-20', 1, '(11) 5432-1098', 'jose@example.com', 'Observações sobre Jose Oliveira.', 0, 'jose789'),
-                     ('João da Silva', '111.222.333-44', '1988-03-10', 1, '(11) 2222-3333', 'joao@example.com', 'Observações sobre João da Silva.', 0, 'joao123'),
-                     ('Maria Oliveira', '555.666.777-88', '1992-08-25', 0, '(11) 4444-5555', 'maria@example.com', 'Observações sobre Maria Oliveira.', 0, 'maria456'),
-                     ('Pedro Santos', '999.888.777-66', '1980-12-05', 1, '(11) 7777-8888', 'pedro@example.com', 'Observações sobre Pedro Santos.', 0, 'pedro789');
+INSERT INTO usuarios (usu_id, usu_nome, usu_cpf, usu_data_nasc, usu_sexo, usu_telefone, usu_email, usu_observ, usu_acesso, usu_senha) VALUES
+                     (1,'José Oliveira', '321.654.987-00', '1995-10-20', 1, '(11) 5432-1098', 'jose@example.com', 'Observações sobre Jose Oliveira.', 0, 'jose789'),
+                     (2, 'João da Silva', '111.222.333-44', '1988-03-10', 1, '(11) 2222-3333', 'joao@example.com', 'Observações sobre João da Silva.', 0, 'joao123'),
+                     (3, 'Maria Oliveira', '555.666.777-88', '1992-08-25', 0, '(11) 4444-5555', 'maria@example.com', 'Observações sobre Maria Oliveira.', 0, 'maria456'),
+                     (4, 'Pedro Santos', '999.888.777-66', '1980-12-05', 1, '(11) 7777-8888', 'pedro@example.com', 'Observações sobre Pedro Santos.', 0, 'pedro789');
                     
 
 
 insert into categorias (cat_id, cat_nome) VALUES
-                        (1, 'Carro')
-                        (2, 'Caminhao')
-                        (3, 'Moto')
-                        (4, 'Nautica')
+                        (1, 'Caminhao'),
+                        (2, 'Carro'),
+                        (3, 'Moto');
+
+
+-- INSERT's PARA TABELA MARCAS DE CAMINHAO
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (1, "CHEVROLET", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (2, "VOLKSWAGEN", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (3, "FIAT", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (4, "MERCEDES-BENZ", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (5, "CHANA", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (6, "FORD", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (7, "HYUNDAI", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (8, "KIA", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (9, "TOYOTA", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (10, "RENAULT", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (11, "AGRALE", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (12, "VOLVO", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (13, "ISUZU", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (14, "IVECO", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (15, "UTILITARIOS AGRICOLAS", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (16, "TRAILER", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (17, "RANDON", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (18, "SCANIA", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (19, "OUTROS", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (20, "ONIBUS", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (21, "UTILITARIOS PESADOS", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (22, "MOTOR-HOME", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (23, "MAN", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (24, "NAVISTAR", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (25, "SINOTRUK", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (26, "SCHIFFER", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (27, "GUERRA", NULL,1);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (28, "MICHIGAN", NULL,1);
+
+
+-- INSERT's PARA TABELA MARCAS DE CARROS
+
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (29, "CHEVROLET", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (30, "VOLKSWAGEN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (31, "FIAT", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (32, "MERCEDES-BENZ", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (33, "CITROEN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (34, "CHANA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (35, "HONDA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (36, "SUBARU", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (37, "FERRARI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (38, "BUGATTI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (39, "LAMBORGHINI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (40, "FORD", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (41, "HYUNDAI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (42, "JAC", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (43, "KIA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (44, "GURGEL", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (45, "DODGE", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (46, "CHRYSLER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (47, "BENTLEY", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (48, "SSANGYONG", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (49, "PEUGEOT", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (50, "TOYOTA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (51, "RENAULT", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (52, "ACURA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (53, "ADAMO", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (54, "AGRALE", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (55, "ALFA ROMEO", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (56, "AMERICAR", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (57, "ASTON MARTIN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (58, "AUDI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (59, "BEACH", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (60, "BIANCO", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (61, "BMW", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (62, "BORGWARD", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (63, "BRILLIANCE", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (64, "BUICK", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (65, "CBT", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (66, "NISSAN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (67, "CHAMONIX", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (68, "CHEDA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (69, "CHERY", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (70, "CORD", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (71, "COYOTE", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (72, "CROSS LANDER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (73, "DAEWOO", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (74, "DAIHATSU", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (75, "VOLVO", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (76, "DE SOTO", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (77, "DETOMAZO", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (78, "DELOREAN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (79, "DKW-VEMAG", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (80, "SUZUKI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (81, "EAGLE", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (82, "EFFA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (83, "ENGESA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (84, "ENVEMO", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (85, "FARUS", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (86, "FERCAR", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (87, "FNM", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (88, "PONTIAC", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (89, "PORSCHE", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (90, "GEO", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (91, "GRANCAR", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (92, "GREAT WALL", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (93, "HAFEI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (94, "HOFSTETTER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (95, "HUDSON", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (96, "HUMMER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (97, "INFINITI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (98, "INTERNATIONAL", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (99, "JAGUAR", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (100, "JEEP", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (101, "JINBEI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (102, "JPX", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (103, "KAISER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (104, "KOENIGSEGG", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (105, "LAUTOMOBILE", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (106, "LAUTOCRAFT", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (107, "LADA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (108, "LANCIA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (109, "LAND ROVER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (110, "LEXUS", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (111, "LIFAN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (112, "LINCOLN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (113, "LOBINI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (114, "LOTUS", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (115, "MAHINDRA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (116, "MASERATI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (117, "MATRA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (118, "MAYBACH", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (119, "MAZDA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (120, "MENON", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (121, "MERCURY", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (122, "MITSUBISHI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (123, "MG", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (124, "MINI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (125, "MIURA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (126, "MORRIS", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (127, "MP LAFER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (128, "MPLM", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (129, "NEWTRACK", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (130, "NISSIN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (131, "OLDSMOBILE", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (132, "PAG", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (133, "PAGANI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (134, "PLYMOUTH", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (135, "PUMA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (136, "RENO", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (137, "REVA-I", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (138, "ROLLS-ROYCE", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (139, "ROMI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (140, "SEAT", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (141, "UTILITARIOS AGRICOLAS", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (142, "SHINERAY", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (143, "SAAB", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (144, "SHORT", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (145, "SIMCA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (146, "SMART", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (147, "SPYKER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (148, "STANDARD", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (149, "STUDEBAKER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (150, "TAC", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (151, "TANGER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (152, "TRIUMPH", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (153, "TROLLER", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (154, "UNIMOG", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (155, "WIESMANN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (156, "CADILLAC", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (157, "AM GEN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (158, "BUGGY", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (159, "WILLYS OVERLAND", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (160, "KASEA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (161, "SATURN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (162, "SWELL MINI", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (163, "SKODA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (164, "KARMANN GHIA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (165, "KART", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (166, "HANOMAG", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (167, "OUTROS", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (168, "HILLMAN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (169, "HRG", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (170, "GAIOLA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (171, "TATA", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (172, "DITALLY", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (173, "RELY", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (174, "MCLAREN", NULL,2);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (175, "GEELY", NULL,2);
+
+
+-- INSERT's PARA TABELA MARCAS DE MOTOS
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (176, "HONDA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (177, "AGRALE", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (178, "BMW", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (179, "SUZUKI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (180, "LIFAN", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (181, "MAHINDRA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (182, "SHINERAY", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (183, "KASINSKI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (184, "YAMAHA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (185, "GARINNI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (186, "SUNDOWN", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (187, "KAWASAKI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (188, "POLARIS", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (189, "ADLY", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (190, "AMAZONAS", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (191, "APRILIA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (192, "ATALA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (193, "BAJAJ", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (194, "BENELLI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (195, "BETA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (196, "BIMOTA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (197, "BRANDY", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (198, "BRAVA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (199, "BRP", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (200, "BUELL", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (201, "BUENO", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (202, "CAGIVA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (203, "MOBILETE", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (204, "DAELIM", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (205, "DAFRA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (206, "DAYANG", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (207, "DAYUN", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (208, "DERBI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (209, "DUCATI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (210, "EMME", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (211, "FYM", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (212, "GAS GAS", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (213, "GREEN", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (214, "HAOBAO", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (215, "HARLEY-DAVIDSON", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (216, "HARTFORD", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (217, "HERO", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (218, "HUSABERG", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (219, "HUSQVARNA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (220, "IROS", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (221, "JIAPENG VOLCANO", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (222, "JOHNNYPAG", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (223, "JONNY", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (224, "KAHENA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (225, "KIMCO", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (226, "LAQUILA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (227, "LANDUM", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (228, "LAVRALE", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (229, "LERIVO", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (230, "LON-V", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (231, "TRICICLO", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (232, "MALAGUTI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (233, "MIZA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (234, "MOTO GUZZI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (235, "MRX", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (236, "MV AUGUSTA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (237, "MVK", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (238, "ORCA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (239, "PEGASSI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (240, "PIAGGIO", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (241, "REGAL RAPTOR", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (242, "SANYANG", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (243, "SIAMOTO", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (244, "TARGOS", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (245, "TRAXX", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (246, "VENTO", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (247, "WUYANG", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (248, "GARRA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (249, "X MOTOS", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (250, "TRICKER", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (251, "LAMBRETA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (252, "OUTROS", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (253, "SCOOTER", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (254, "ZONGSHEN", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (255, "BIRELLI", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (256, "WALK MACHINE", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (257, "FBM", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (258, "ARIEL", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (259, "DUCAR", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (260, "DITALLY", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (261, "MARVA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (262, "WOLVER", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (263, "KTM", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (264, "LEOPARD", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (265, "JAWA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (266, "BULL", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (267, "CAN-AM", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (268, "ACELLERA", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (269, "VICTORY", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (270, "INDIAN", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (271, "BRAVAX", NULL,3);
+INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (272, "GARELLI", NULL,3);
