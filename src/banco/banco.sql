@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `indisponibilidade` (
 CREATE TABLE IF NOT EXISTS `marcas` (
 	`mar_id` int AUTO_INCREMENT NOT NULL UNIQUE,
 	`mar_nome` varchar(50) NOT NULL,
+	`mar_cod` int, NOT NULL,
 	`mar_icone` varchar(128),
 	`cat_id` int NOT NULL,
 	PRIMARY KEY (`mar_id`)
@@ -49,7 +50,9 @@ CREATE TABLE IF NOT EXISTS `marcas` (
 CREATE TABLE IF NOT EXISTS `modelos` (
 	`mod_id` int AUTO_INCREMENT NOT NULL UNIQUE,
 	`mod_nome` varchar(60) NOT NULL,
-	`mar_id` int NOT NULL,
+	`mod_cod` int NOT NULL,
+	`mar_cod` int NOT NULL,
+	`mar_id` int NULL,
 	PRIMARY KEY (`mod_id`)
 );
 
@@ -91,8 +94,8 @@ CREATE TABLE IF NOT EXISTS `agendamentos` (
 ALTER TABLE `veiculos` ADD CONSTRAINT `veiculos_fk1` FOREIGN KEY (`mod_id`) REFERENCES `modelos`(`mod_id`);
 
 ALTER TABLE `agendamentos` ADD CONSTRAINT `agendamentos_fk1` FOREIGN KEY (`veic_usu_id`) REFERENCES `veiculo_usuario`(`veic_usu_id`);
-ALTER TABLE `veiculo_usuario` ADD CONSTRAINT `veiculo_usuario_fk1` FOREIGN KEY (`veic_id`) REFERENCES `veiculos`(`veic_id`);
 
+ALTER TABLE `veiculo_usuario` ADD CONSTRAINT `veiculo_usuario_fk1` FOREIGN KEY (`veic_id`) REFERENCES `veiculos`(`veic_id`);
 ALTER TABLE `veiculo_usuario` ADD CONSTRAINT `veiculo_usuario_fk2` FOREIGN KEY (`usu_id`) REFERENCES `usuarios`(`usu_id`);
 
 ALTER TABLE `marcas` ADD CONSTRAINT `marcas_fk3` FOREIGN KEY (`cat_id`) REFERENCES `categorias`(`cat_id`);
