@@ -1,0 +1,46 @@
+<Button onPress={onOpen}>Open Modal</Button>
+            <>
+
+
+                <Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} isKeyboardDismissDisabled={true} className={styles.modal}>
+                    <ModalContent className={styles.modal_content}>
+                        {(onClose) => (
+                            <>
+
+                                <ModalHeader className={styles.header_modal}>Modal Title</ModalHeader>
+                                <ModalBody className={styles.body_modal}>
+                                    {/* <fieldset className={styles.fieldset}>
+                                        <label htmlFor="" className={styles.label}>NOME</label>
+                                        <input type="text" className={styles.input} required />
+                                    </fieldset>
+
+                                    <fieldset className={styles.fieldset}>
+                                        <label htmlFor="" className={styles.label}>TELEFONE</label>
+                                        <input type="text" className={styles.input} required />
+                                    </fieldset>
+
+                                    <fieldset className={styles.fieldset}>
+                                        <label htmlFor="" className={styles.label}>EMAIL</label>
+                                        <input type="text" className={styles.input} required />
+                                    </fieldset>
+
+                                    <fieldset className={styles.fieldset}>
+                                        <label htmlFor="" className={styles.label}>SENHA</label>
+                                        <input type="password" className={styles.input} required />
+                                    </fieldset> */}
+
+
+                                </ModalBody>
+                                <ModalFooter className={styles.footer_modal}>
+                                    {/* <Button className={`${styles.button} ${styles.fechar}`} color="danger" variant="light" onPress={onClose}>
+                                        Close
+                                    </Button>
+                                    <Button className={`${styles.button} ${styles.confirmar}`} color="primary" onPress={onClose}>
+                                        Action
+                                    </Button> */}
+                                </ModalFooter>
+                            </>
+                        )}
+                    </ModalContent>
+                </Modal>
+            </>

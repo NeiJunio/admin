@@ -21,8 +21,8 @@
 
 }
 
-.header h1 {
-  font-size: 40px;
+.title {
+  font-size: clamp(1.875rem, 1.2208rem + 2.1763vw, 3.125rem); /*clamp.font-size.app*/
   font-family: "Kanit", sans-serif;
 }
 
@@ -33,6 +33,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px 0;
+  
 }
 
 .sidebar button {
@@ -309,4 +310,17 @@
   z-index: 1000;
   flex-direction: column;
   border: yellowgreen solid 14px;
+}
+
+
+@media (min-width: 300px) and (max-width: 991px) {
+  .grid_container {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "sidebar main";
+    grid-template-rows: 110px 1fr;
+    grid-template-columns: 180px 1fr;
+    height: 100vh;
+  }
 }

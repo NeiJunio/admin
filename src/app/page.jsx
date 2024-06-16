@@ -46,8 +46,7 @@ export default function Home() {
     return (
         <div className={styles.grid_container}>
             <div className={styles.header}>
-            
-                <h1>Painel Administrativo da Mecânica</h1>
+                <h1 className={styles.title}>Painel Administrativo da Mecânica</h1>
             </div>
             <div className={styles.sidebar}>
                 <button data-target="#clientes" onClick={() => setTela(1)}>Clientes</button>
