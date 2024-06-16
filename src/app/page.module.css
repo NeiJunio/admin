@@ -39,7 +39,7 @@
 .sidebar button {
   width: 100%;
   padding: 15px 20px;
-  text-align: left;
+  text-align: center;
   border: none;
   background: none;
   color: white;
@@ -68,8 +68,6 @@
 .hidden {
   display: none;
 }
-
-
 
 .button_group {
   margin: 20px;
@@ -321,6 +319,17 @@
       "sidebar main";
     grid-template-rows: 110px 1fr;
     grid-template-columns: 180px 1fr;
+    height: 100vh;
+  }
+
+  .grid_container {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main";
+    grid-template-rows: 110px 1fr;
+    grid-template-columns: 1fr;
     height: 100vh;
   }
 }
