@@ -14,6 +14,59 @@ insert into categorias (cat_id, cat_nome) VALUES
                         (3, 'Moto');
 
 
+-- -- INSERT's PARA TABELA SERVIÇOS
+INSERT INTO `servicos` (`serv_categoria`, `serv_nome`, `serv_duracao`, `serv_preco`, `serv_descricao`, `serv_situacao`) VALUES
+('Lavagem e Higienização', 'Lavagem externa (tradicional)', '00:30:00', 30.00, 'Lavagem externa convencional do veículo.', b'1'),
+('Lavagem e Higienização', 'Lavagem externa (a seco)', '00:40:00', 40.00, 'Lavagem externa do veículo sem uso de água.', b'1'),
+('Lavagem e Higienização', 'Lavagem interna completa', '01:00:00', 60.00, 'Limpeza completa do interior do veículo.', b'1'),
+('Lavagem e Higienização', 'Limpeza de estofados', '02:00:00', 120.00, 'Limpeza profunda de estofados.', b'1'),
+('Lavagem e Higienização', 'Limpeza de carpetes', '01:30:00', 70.00, 'Limpeza detalhada dos carpetes do veículo.', b'1'),
+('Lavagem e Higienização', 'Higienização de ar-condicionado', '01:00:00', 80.00, 'Higienização do sistema de ar-condicionado.', b'1'),
+('Lavagem e Higienização', 'Descontaminação de pintura', '01:30:00', 100.00, 'Remoção de contaminantes da pintura.', b'1'),
+
+('Polimento e Proteção da Pintura', 'Polimento de pintura', '03:00:00', 200.00, 'Polimento completo da pintura do veículo.', b'1'),
+('Polimento e Proteção da Pintura', 'Espelhamento', '04:00:00', 250.00, 'Espelhamento da pintura para brilho intenso.', b'1'),
+('Polimento e Proteção da Pintura', 'Vitrificação', '05:00:00', 300.00, 'Aplicação de revestimento vitrificado.', b'1'),
+('Polimento e Proteção da Pintura', 'Enceramento', '01:30:00', 80.00, 'Aplicação de cera para proteção da pintura.', b'1'),
+('Polimento e Proteção da Pintura', 'Selagem de pintura', '02:00:00', 150.00, 'Selagem da pintura para proteção prolongada.', b'1'),
+('Polimento e Proteção da Pintura', 'Aplicação de película de proteção de pintura (PPF)', '06:00:00', 500.00, 'Aplicação de película protetora de pintura.', b'1'),
+
+('Cuidados com Vidros e Faróis', 'Polimento de faróis', '01:00:00', 60.00, 'Polimento para clarear faróis.', b'1'),
+('Cuidados com Vidros e Faróis', 'Restauração de faróis', '02:00:00', 120.00, 'Restauração completa de faróis.', b'1'),
+('Cuidados com Vidros e Faróis', 'Aplicação de repelente de água (cristalização de vidros)', '00:45:00', 50.00, 'Aplicação de repelente de água nos vidros.', b'1'),
+('Cuidados com Vidros e Faróis', 'Aplicação de insulfilm', '02:30:00', 200.00, 'Aplicação de película insulfilm.', b'1'),
+
+('Cuidados com Rodas e Pneus', 'Limpeza de rodas e calotas', '00:45:00', 40.00, 'Limpeza detalhada de rodas e calotas.', b'1'),
+('Cuidados com Rodas e Pneus', 'Polimento de rodas', '01:30:00', 100.00, 'Polimento para brilho intenso das rodas.', b'1'),
+('Cuidados com Rodas e Pneus', 'Aplicação de protetores de pneu', '00:30:00', 30.00, 'Aplicação de produto protetor nos pneus.', b'1'),
+('Cuidados com Rodas e Pneus', 'Pintura e restauração de rodas', '03:00:00', 250.00, 'Pintura e restauração de rodas.', b'1'),
+
+('Detalhamento Interno (Detailing)', 'Limpeza detalhada do painel e console', '01:00:00', 60.00, 'Limpeza detalhada do painel e console.', b'1'),
+('Detalhamento Interno (Detailing)', 'Limpeza e hidratação de bancos de couro', '02:00:00', 150.00, 'Limpeza e hidratação de bancos de couro.', b'1'),
+('Detalhamento Interno (Detailing)', 'Limpeza e hidratação de plásticos internos', '01:30:00', 80.00, 'Limpeza e hidratação de plásticos internos.', b'1'),
+('Detalhamento Interno (Detailing)', 'Limpeza de portas e maçanetas', '01:00:00', 50.00, 'Limpeza detalhada de portas e maçanetas.', b'1'),
+('Detalhamento Interno (Detailing)', 'Detalhamento de dutos de ventilação', '01:00:00', 70.00, 'Limpeza detalhada dos dutos de ventilação.', b'1'),
+
+('Remoção de Odores', 'Tratamento com ozônio', '01:30:00', 150.00, 'Remoção de odores com tratamento de ozônio.', b'1'),
+('Remoção de Odores', 'Neutralização de odores', '01:00:00', 100.00, 'Neutralização de odores no veículo.', b'1'),
+
+('Correção de Pintura', 'Retoque de pintura', '03:00:00', 200.00, 'Retoque de pintura para corrigir imperfeições.', b'1'),
+('Correção de Pintura', 'Pintura parcial', '04:00:00', 300.00, 'Pintura parcial para correção estética.', b'1'),
+
+('Customização', 'Envelopamento automotivo (vinil)', '06:00:00', 800.00, 'Envelopamento completo do veículo com vinil.', b'1'),
+('Customização', 'Pintura de pinças de freio', '02:00:00', 150.00, 'Pintura personalizada das pinças de freio.', b'1'),
+('Customização', 'Aplicação de adesivos decorativos', '01:00:00', 50.00, 'Aplicação de adesivos decorativos no veículo.', b'1'),
+('Customização', 'Instalação de spoilers e acessórios externos', '03:00:00', 300.00, 'Instalação de spoilers e acessórios externos.', b'1'),
+
+('Reparos Estéticos', 'Remoção de riscos e arranhões', '02:00:00', 200.00, 'Remoção de riscos e arranhões superficiais.', b'1'),
+('Reparos Estéticos', 'Reparo de amassados sem pintura (martelinho de ouro)', '03:00:00', 300.00, 'Reparo de amassados sem necessidade de pintura.', b'1'),
+('Reparos Estéticos', 'Remoção de manchas', '01:30:00', 100.00, 'Remoção de manchas da superfície do veículo.', b'1'),
+
+('Serviços Adicionais', 'Lavagem de motor', '01:00:00', 80.00, 'Lavagem detalhada do motor do veículo.', b'1'),
+('Serviços Adicionais', 'Polimento de escapamento', '01:00:00', 50.00, 'Polimento do sistema de escapamento.', b'1'),
+('Serviços Adicionais', 'Revitalização de teto solar', '02:00:00', 150.00, 'Revitalização e limpeza do teto solar.', b'1');
+
+
 -- INSERT's PARA TABELA MARCAS
 INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (1, "CHEVROLET", NULL,1);
 INSERT INTO marcas (mar_id, mar_nome, mar_icone, cat_id) VALUES (2, "VOLKSWAGEN", NULL,1);

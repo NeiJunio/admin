@@ -90,6 +90,16 @@ CREATE TABLE IF NOT EXISTS `agendamentos` (
 	PRIMARY KEY (`agend_id`)
 );
 
+CREATE TABLE IF NOT EXISTS `servicos` (
+	`serv_id` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`serv_categoria` varchar(60) NOT NULL,
+	`serv_nome` varchar(60) NOT NULL,
+	`serv_duracao` time NOT NULL,
+	`serv_preco` decimal(7,2) NOT NULL,
+	`serv_descricao` varchar(200) NOT NULL,
+	`serv_situacao` bit(1) NOT NULL,
+	PRIMARY KEY (`serv_id`)
+);
 
 ALTER TABLE `veiculos` ADD CONSTRAINT `veiculos_fk1` FOREIGN KEY (`mod_id`) REFERENCES `modelos`(`mod_id`);
 
