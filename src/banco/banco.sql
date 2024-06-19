@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `marcas` (
 	`mar_nome` varchar(50) NOT NULL,
 	`mar_cod` int, NOT NULL,
 	`mar_icone` varchar(128),
-	`cat_id` int NOT NULL,
+	`cat_id` int NULL,
 	PRIMARY KEY (`mar_id`)
 );
 
