@@ -1,5 +1,6 @@
 import styles from './index.module.css';
 
+
 export default function Veiculos() {
     return(
         <div id="veiculos" className={`${styles.content_section}`}>
