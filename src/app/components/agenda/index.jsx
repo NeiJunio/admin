@@ -62,28 +62,39 @@ const FullCalendar = () => {
 
     useEffect(() => {
         const calendar = new Calendar(calendarRef.current, {
- 
-           contentHeight: 600,
-            handleWindowResize: true,
-            selectable: true,
-            locale: ptLocale,
-            timeZone: 'local',
-            plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
-            initialView: 'dayGridMonth',
-            headerToolbar: {
-                left: 'dayGridMonth,timeGridWeek,timeGridDay',
-                center: 'title',
-                right: 'today prev,next'
+          contentHeight: 600,
+          handleWindowResize: true,
+          selectable: true,
+          locale: ptLocale,
+          timeZone: 'local',
+          plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
+          initialView: 'dayGridMonth',
+          headerToolbar: {
+            left: 'dayGridMonth,timeGridWeek,timeGridDay',
+            center: 'title',
+            right: 'today prev,next'
+          },
+          events: events,
+          dateClick: handleDateClick,
+          eventClick: handleEventClick,
+          slotMinTime: '08:00:00', // Define a hora inicial da visualização
+          slotMaxTime: '18:00:00', // Define a hora final da visualização
+          minTime: '08:00:00',     // Define a hora inicial para eventos
+          maxTime: '18:00:00',
+          businessHours: [
+            {
+              daysOfWeek: [1, 2, 3, 4, 5], // De segunda a sexta-feira
+              startTime: '08:00', // Horário de início
+              endTime: '12:00' // Horário de fim
             },
-            events: events,
-            dateClick: handleDateClick,
-            eventClick: handleEventClick,
-            slotMinTime: '08:00:00', // Define a hora inicial da visualização
-            slotMaxTime: '18:00:00', // Define a hora final da visualização
-            minTime: '08:00:00',     // Define a hora inicial para eventos
-            maxTime: '18:00:00'      // Define a hora final para eventos
+            {
+              daysOfWeek: [1, 2, 3, 4, 5], // De segunda a sexta-feira
+              startTime: '13:00', // Horário de início
+              endTime: '18:00' // Horário de fim
+            }
+          ]
         });
-
+    
         calendar.render();
 
         return () => {

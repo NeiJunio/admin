@@ -1,3 +1,7 @@
+CREATE TABLE IF NOT EXISTS `categorias_servicos` (
+    `cat_serv_id` INT AUTO_INCREMENT PRIMARY KEY,
+    `cat_serv_nome` VARCHAR(60) NOT NULL
+);
 
 
 
@@ -101,6 +105,18 @@ CREATE TABLE IF NOT EXISTS `servicos` (
 	PRIMARY KEY (`serv_id`)
 );
 
+
+CREATE TABLE IF NOT EXISTS `servicos` (
+    `serv_id` INT AUTO_INCREMENT PRIMARY KEY,
+    `cat_serv_id` INT NULL,
+    `serv_nome` VARCHAR(60) NOT NULL,
+    `serv_duracao` TIME NOT NULL,
+    `serv_preco` DECIMAL(7,2) NOT NULL,
+    `serv_descricao` VARCHAR(200) NOT NULL,
+    `serv_situacao` BIT NOT NULL,
+    FOREIGN KEY (`cat_serv_id`) REFERENCES categorias_servicos(`cat_serv_id`)
+);
+
 ALTER TABLE `veiculos` ADD CONSTRAINT `veiculos_fk1` FOREIGN KEY (`mod_id`) REFERENCES `modelos`(`mod_id`);
 
 ALTER TABLE `agendamentos` ADD CONSTRAINT `agendamentos_fk1` FOREIGN KEY (`veic_usu_id`) REFERENCES `veiculo_usuario`(`veic_usu_id`);
@@ -110,3 +126,5 @@ ALTER TABLE `veiculo_usuario` ADD CONSTRAINT `veiculo_usuario_fk2` FOREIGN KEY (
 
 ALTER TABLE `marcas` ADD CONSTRAINT `marcas_fk3` FOREIGN KEY (`cat_id`) REFERENCES `categorias`(`cat_id`);
 ALTER TABLE `modelos` ADD CONSTRAINT `modelos_fk2` FOREIGN KEY (`mar_id`) REFERENCES `marcas`(`mar_id`);
+
+ALTER TABLE `servicos` ADD CONSTRAINT `FK_cat_serv_id` FOREIGN KEY (`cat_serv_id`) REFERENCES `categorias_servicos`(`cat_serv_id`);
