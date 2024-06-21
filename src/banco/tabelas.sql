@@ -84,14 +84,28 @@ CREATE TABLE IF NOT EXISTS `veiculo_usuario` (
 -- Tabela de Agendamentos
 CREATE TABLE IF NOT EXISTS `agendamentos` (
 	`agend_id` int AUTO_INCREMENT NOT NULL UNIQUE, -- Identificador único do agendamento
-	`usu_id` int NOT NULL, -- Chave estrangeira para a tabela usuários
-	`veic_id` int NOT NULL, -- Chave estrangeira para a tabela veículos
-	`serv_id` int NOT NULL, -- Chave estrangeira para a tabela serviços
+	`veic_usu_id` int NOT NULL,
 	`agend_data` date NOT NULL, -- Data do agendamento
 	`agend_horario` time NOT NULL, -- Horário do agendamento
 	`agend_situacao` int NOT NULL, -- Situação do agendamento
 	`agend_observ` varchar(200) NOT NULL, -- Observações sobre o agendamento
 	PRIMARY KEY (`agend_id`) -- Chave primária
+);
+
+-- Tabela Agenda_serviços
+CREATE TABLE IF NOT EXISTS `agenda_servicos` (
+	`agend_serv_id` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`agend_id` int NOT NULL,
+	 `serv_id` INT NOT NULL,
+	`agend_serv_situ_id` INT NOT NULL,
+	 PRIMARY KEY (`agend_serv_id`)
+	 FOREIGN KEY (`agend_serv_situ_id`) REFERENCES agenda_servicos_situacao (`agend_serv_situ_id`)
+);
+
+CREATE TABLE IF NOT EXISTS `agenda_servicos_situacao` (
+	`agend_serv_situ_id` int AUTO_INCREMENT NOT NULL,
+	`agend_serv_situ_nome` varchar(50) NOT NULL,
+	PRIMARY KEY (`agend_serv_situ_id`)
 );
 
 -- Tabela de Categorias de Serviços
