@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `agenda_servicos` (
 	`agend_id` int NOT NULL,
 	 `serv_id` INT NOT NULL,
 	`agend_serv_situ_id` INT NOT NULL,
-	 PRIMARY KEY (`agend_serv_id`)
+	 PRIMARY KEY (`agend_serv_id`),
 	 FOREIGN KEY (`agend_serv_situ_id`) REFERENCES agenda_servicos_situacao (`agend_serv_situ_id`)
 );
 
@@ -145,3 +145,6 @@ ALTER TABLE `modelos` ADD CONSTRAINT `modelos_fk2` FOREIGN KEY (`mar_id`) REFERE
 
 -- Tabela Serviços referenciando Categorias_Servicos
 ALTER TABLE `servicos` ADD CONSTRAINT `FK_cat_serv_id` FOREIGN KEY (`cat_serv_id`) REFERENCES `categorias_servicos`(`cat_serv_id`);
+
+-- Tabela Marcas referenciando Categorias
+ALTER TABLE `marcas` ADD CONSTRAINT `marcas_fk3` FOREIGN KEY (`cat_id`) REFERENCES `categorias`(`cat_id`);
