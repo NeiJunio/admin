@@ -148,3 +148,9 @@ ALTER TABLE `servicos` ADD CONSTRAINT `FK_cat_serv_id` FOREIGN KEY (`cat_serv_id
 
 -- Tabela Marcas referenciando Categorias
 ALTER TABLE `marcas` ADD CONSTRAINT `marcas_fk3` FOREIGN KEY (`cat_id`) REFERENCES `categorias`(`cat_id`);
+
+-- Adicionando chave estrangeira na tabela agenda_servicos para agendamentos
+ALTER TABLE `agenda_servicos` ADD CONSTRAINT `fk_agenda_servicos_agendamentos` FOREIGN KEY (`agend_id`) REFERENCES `agendamentos`(`agend_id`);
+
+-- Adicionando chave estrangeira na tabela agenda_servicos para servicos
+ALTER TABLE `agenda_servicos` ADD CONSTRAINT `fk_agenda_servicos_servicos` FOREIGN KEY (`serv_id`) REFERENCES `servicos`(`serv_id`);
